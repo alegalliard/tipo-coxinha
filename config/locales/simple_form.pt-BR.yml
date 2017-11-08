@@ -2,6 +2,7 @@ pt-BR:
   simple_form:
     "yes": 'Sim'
     "no": 'Não'
+    back: 'Voltar'
     required:
       text: 'requerido'
       mark: '*'
@@ -10,8 +11,8 @@ pt-BR:
     labels:
       product:
         name: "Nome"
-        category: "Categoria"
-        delivery_type: 'Forma de Entrega'
-        unity: 'Unidade'
+        category_id: "Categoria"
+        delivery_type_id: 'Forma de Entrega'
+        unity_id: 'Unidade'
         price: 'Preço em R$'
         submit: 'Cadastrar'

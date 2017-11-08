@@ -2,6 +2,7 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    back: 'Voltar'
     required:
       text: 'required'
       mark: '*'

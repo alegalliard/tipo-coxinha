@@ -12,7 +12,7 @@ feature "Cooker register product" do
     select 'Salgado', from: 'Categoria'
     select 'Congelado', from: 'Forma de Entrega'
     select 'Quilo', from: 'Unidade'
-    fill_in 'Preço', with: 'R$ 10,00'
+    fill_in 'Preço', with: '10,00'
     click_on 'Cadastrar'
 
     expect(page).to have_content 'coxinha de frango'
@@ -20,5 +20,16 @@ feature "Cooker register product" do
     expect(page).to have_content 'Congelado'
     expect(page).to have_content 'Quilo'
     expect(page).to have_content 'R$ 10,00'
+  end
+  scenario 'and fills nothing' do
+    visit new_product_path
+
+    click_on 'Cadastrar'
+
+    expect(page).to have_content 'Nome é obrigatório(a)'
+    expect(page).to have_content 'Categoria é obrigatório(a)'
+    expect(page).to have_content 'Forma de Entrega é obrigatório(a)'
+    expect(page).to have_content 'Unidade é obrigatório(a)'
+    expect(page).to have_content 'Preço é obrigatório(a)'
   end
 end

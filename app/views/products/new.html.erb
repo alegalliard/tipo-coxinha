@@ -1,9 +1,10 @@
 <%= simple_form_for @product, html: { class: 'form-horizontal' },
   wrapper: :horizontal_form do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: @category %>
-  <%= f.input :delivery_type, collection: @delivery_type %>
-  <%= f.input :unity, collection: @unity %>
-  <%= f.input :price, as: :decimal %>
+
+  <%= f.input :name, required: true %>
+  <%= f.input :category_id, collection: @category, required: true %>
+  <%= f.input :delivery_type_id, collection: @delivery_type, required: true %>
+  <%= f.input :unity_id, collection: @unity, required: true %>
+  <%= f.input :price, as: :decimal, required: true %>
   <%= f.button :submit, t('helpers.submit.register'), class: 'btn btn-primary' %>
 <% end %>
