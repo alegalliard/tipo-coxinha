@@ -1,9 +1,3 @@
 <% if flash[:notice] %>
   <div class="alert-success"><%= flash[:notice] %></div>
 <% end %>
-<%  if user_signed_in? %>
-  <%= link_to 'Sair', destroy_user_session_path, method: 'DELETE' %>
-<% else %>
-  <%= link_to t("devise.registrations.new.sign_up"), new_user_registration_path %>
-  <%= link_to t("devise.sessions.new.sign_in"), new_user_session_path %>
-<% end %>
