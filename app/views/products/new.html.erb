@@ -1,0 +1,8 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: @category %>
+  <%= f.input :delivery_type, collection: @delivery_type %>
+  <%= f.input :unity, collection: @unity %>
+  <%= f.input :price %>
+  <%= f.button :submit, t('helpers.submit.register') %>
+<% end %>
