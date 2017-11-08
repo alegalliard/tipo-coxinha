@@ -1,8 +1,9 @@
-<%= simple_form_for @product do |f| %>
+<%= simple_form_for @product, html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form do |f| %>
   <%= f.input :name %>
   <%= f.input :category, collection: @category %>
   <%= f.input :delivery_type, collection: @delivery_type %>
   <%= f.input :unity, collection: @unity %>
-  <%= f.input :price %>
-  <%= f.button :submit, t('helpers.submit.register') %>
+  <%= f.input :price, as: :decimal %>
+  <%= f.button :submit, t('helpers.submit.register'), class: 'btn btn-primary' %>
 <% end %>

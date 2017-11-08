@@ -13,5 +13,5 @@ pt-BR:
         category: "Categoria"
         delivery_type: 'Forma de Entrega'
         unity: 'Unidade'
-        price: 'Preço'
+        price: 'Preço em R$'
         submit: 'Cadastrar'
