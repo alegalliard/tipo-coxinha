@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :name, :neighborhood, :city_state, :phone, presence: true
 
   enum account_type: { cook: 0, user: 1 }
+
+  has_many :products
 end

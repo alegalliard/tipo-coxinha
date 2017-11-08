@@ -5,7 +5,13 @@ feature "Cooker register product" do
     create(:category, name: 'Salgado')
     create(:delivery_type, name: 'Congelado')
     create(:unity, name: 'Quilo')
+    user = create(:user)
+
     visit root_path
+    click_on 'Login'
+    fill_in 'Email', with: user.email
+    fill_in 'Senha', with: user.password
+    click_on 'Log in'
     click_on 'Cadastrar Produto'
 
     fill_in 'Nome', with: 'coxinha de frango'
@@ -22,6 +28,8 @@ feature "Cooker register product" do
     expect(page).to have_content 'R$ 10,00'
   end
   scenario 'and fills nothing' do
+    user = create(:user)
+    login_as(user, scope: :user)
     visit new_product_path
 
     click_on 'Cadastrar'

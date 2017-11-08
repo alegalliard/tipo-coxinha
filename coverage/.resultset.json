@@ -940,6 +940,8 @@
         1,
         null,
         1,
+        null,
+        1,
         null
       ],
       "/Users/campuscode06/workspace/tipo-coxinha/app/models/application_record.rb": [
@@ -1023,7 +1025,6 @@
         1,
         1,
         1,
-        1,
         null,
         1,
         1,
@@ -1037,7 +1038,16 @@
         1,
         1,
         1,
+        1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         1,
         1,
         null,
@@ -1073,7 +1083,7 @@
         1,
         null,
         1,
-        7,
+        9,
         null,
         null,
         null,
@@ -1098,6 +1108,7 @@
         1,
         null,
         1,
+        1,
         null,
         1,
         null,
@@ -1107,6 +1118,7 @@
         null,
         null,
         1,
+        2,
         2,
         2,
         1,
@@ -1138,6 +1150,8 @@
         1,
         1,
         1,
+        1,
+        null,
         null,
         1,
         1,
@@ -1149,6 +1163,6 @@
         null
       ]
     },
-    "timestamp": 1510183390
+    "timestamp": 1510185372
   }
 }
