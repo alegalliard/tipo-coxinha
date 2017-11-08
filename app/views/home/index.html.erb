@@ -1,1 +1,5 @@
+
 <%= link_to 'Cadastrar Produto', new_product_path, class: 'btn btn-secondary' %>
+<% if flash[:notice] %>
+  <div class="alert-success"><%= flash[:notice] %></div>
+<% end %>
