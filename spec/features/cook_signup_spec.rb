@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Cook signup' do
   scenario 'successfully' do
     visit root_path
-    click_on 'Cadastrar'
+    click_on 'Inscrever-se'
 
     fill_in 'Nome', with: 'Tia Cleuza'
     fill_in 'Email', with: 'emaildatia@email.com'
@@ -17,5 +17,32 @@ feature 'Cook signup' do
 
     expect(page).to have_css('div',
                              text: 'Bem vindo! Você realizou seu registro com sucesso.')
+  end
+
+  scenario 'validate fields' do
+    visit root_path
+
+    click_on 'Inscrever-se'
+
+    fill_in 'Nome', with: ''
+    fill_in 'Email', with: ''
+    fill_in 'Senha', with: ''
+    fill_in 'Confirme sua senha', with: ''
+    fill_in 'Bairro', with: ''
+    fill_in 'Cidade - Estado', with: ''
+    fill_in 'Telefone', with: ''
+
+    click_on 'Criar Conta'
+
+    expect(page).to have_css('div.alert-error',
+                             text: 'Nome não pode ficar em branco')
+    expect(page).to have_css('div.alert-error',
+                             text: 'Email não pode ficar em branco')
+    expect(page).to have_css('div.alert-error',
+                             text: 'Bairro não pode ficar em branco')
+    expect(page).to have_css('div.alert-error',
+                             text: 'Cidade - Estado não pode ficar em branco')
+    expect(page).to have_css('div.alert-error',
+                             text: 'Telefone não pode ficar em branco')
   end
 end
