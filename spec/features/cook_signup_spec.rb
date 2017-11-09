@@ -12,6 +12,8 @@ feature 'Cook signup' do
     fill_in 'Bairro', with: 'Sacomã'
     fill_in 'Cidade - Estado', with: 'São Paulo - SP'
     fill_in 'Telefone', with: '1191234-5678'
+    attach_file('Avatar', "#{Rails.root}/spec/support/fixtures/image.jpg")
+    fill_in 'Descrição', with: 'Os mais maravilhosos salgados da tia Cleuza'
     select 'Cozinheiro(a)', from: 'Eu sou'
     click_on 'Criar Conta'
 
