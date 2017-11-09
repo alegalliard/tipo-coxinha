@@ -929,6 +929,9 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/campuscode06/workspace/tipo-coxinha/app/models/user.rb": [
@@ -1061,6 +1064,49 @@
         null,
         null
       ],
+      "/Users/campuscode06/workspace/tipo-coxinha/spec/features/user_view_cook_profile_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/campuscode06/workspace/tipo-coxinha/spec/models/user_spec.rb": [
         1,
         null,
@@ -1161,8 +1207,16 @@
         null,
         null,
         null
+      ],
+      "/Users/campuscode06/workspace/tipo-coxinha/app/controllers/profiles_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1510185372
+    "timestamp": 1510268051
   }
 }

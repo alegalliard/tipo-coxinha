@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :product do
     name "MyString"
-    category nil
-    delivery_type nil
-    unity nil
+    category
+    delivery_type
+    unity
     price "9.99"
   end
 end
