@@ -133,6 +133,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null
       ],
       "/Users/campuscode06/workspace/tipo-coxinha/config/boot.rb": [
@@ -920,6 +922,8 @@
         1,
         1,
         1,
+        8,
+        1,
         null,
         null
       ],
@@ -929,7 +933,6 @@
         1,
         1,
         1,
-        null,
         1,
         1,
         null
@@ -941,7 +944,9 @@
         1,
         null,
         1,
+        1,
         null,
+        1,
         1,
         null,
         1,
@@ -1060,6 +1065,44 @@
         1,
         1,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/campuscode06/workspace/tipo-coxinha/spec/features/user_search_by_region_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
         1,
         null,
         null
@@ -1208,6 +1251,13 @@
         null,
         null
       ],
+      "/Users/campuscode06/workspace/tipo-coxinha/app/controllers/search_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
       "/Users/campuscode06/workspace/tipo-coxinha/app/controllers/profiles_controller.rb": [
         1,
         null,
@@ -1217,6 +1267,6 @@
         null
       ]
     },
-    "timestamp": 1510268412
+    "timestamp": 1510269708
   }
 }
