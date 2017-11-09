@@ -6,7 +6,7 @@
       <%= image_tag user.avatar.url(:medium) %>
       <h2><%= user.name %></h2>
       <p><%= user.description %></p>
-      <%= link_to 'Ver detalhes' %>
+      <%= link_to 'Ver detalhes', profile_path(user.id) %>
     </li>
   <% end %>
 </ul>
