@@ -40,6 +40,9 @@
         </ul>
       </div>
     </nav>
+    <% if flash[:notice] %>
+      <div class="alert-success"><%= flash[:notice] %></div>
+    <% end %>
     <main class="container mt-5">
       <%= yield %>
     </main>

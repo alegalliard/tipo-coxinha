@@ -1,3 +1,5 @@
-<% if flash[:notice] %>
-  <div class="alert-success"><%= flash[:notice] %></div>
+<%= form_tag(search_by_region_path, method: :get) do %>
+  <%= label_tag :region, 'Busca por região' %>
+  <%= search_field_tag :region %>
+  <%= submit_tag 'Buscar' %>
 <% end %>
