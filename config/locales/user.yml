@@ -30,5 +30,7 @@ pt-BR:
         city_state: Cidade - Estado
         phone: Telefone
         account_type: Eu sou
+        avatar: Avatar
+        description: Descrição
     models:
       user: Usuário
