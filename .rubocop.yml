@@ -1,4 +1,6 @@
 AllCops:
+  Rails:
+    Enabled: true
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -7,5 +9,16 @@ AllCops:
     - 'script/**/*'
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
+    - 'spec/factories/*'
+    - 'config/puma.rb'
+    - 'config/spring.rb'
+    - 'config/environments/*'
+    - 'bin/yarn'
+    - 'config/initializers/simple_form_bootstrap.rb'
+    - 'config/initializers/simple_form.rb'
+    - 'config/initializers/devise.rb'
+    - 'Gemfile'
   UseCache: false
   TargetRailsVersion: 5.1
+Documentation:
+  Enabled: false
