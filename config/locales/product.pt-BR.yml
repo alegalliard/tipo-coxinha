@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      product: "Produto"
+      category: 'Categoria'
+      delivery_type: 'Forma de Entrega'
+      unity: 'Unidade'
+    attributes:
+      product:
+        name: 'Nome'
+        category: "Categoria"
+        category_id: "Categoria"
+        delivery_type: "Forma de Entrega"
+        delivery_type_id: "Forma de Entrega"
+        unity: "Unidade"
+        unity_id: "Unidade"
+        price: 'Preço'

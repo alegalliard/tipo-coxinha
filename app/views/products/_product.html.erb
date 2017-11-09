@@ -1,0 +1,9 @@
+<h3><%= product.name %></h3>
+<p><%= t 'activerecord.attributes.product.category' %>:</p>
+<p><%= product.category.name %></p>
+<p><%= t 'activerecord.attributes.product.delivery_type' %>:</p>
+<p><%= product.delivery_type.name %></p>
+<p><%= t 'activerecord.attributes.product.unity' %>:</p>
+<p><%= product.unity.name %></p>
+<p><%= t 'activerecord.attributes.product.price' %>:</p>
+<p><%= number_to_currency(product.price) %></p>

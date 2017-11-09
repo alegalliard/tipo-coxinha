@@ -8,4 +8,6 @@ class User < ApplicationRecord
                              default_url: '/images/:style/sem_foto.png'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   enum account_type: { cook: 0, user: 1 }
+
+  has_many :products
 end

@@ -35,14 +35,14 @@ feature 'Cook signup' do
     click_on 'Criar Conta'
 
     expect(page).to have_css('div.alert-error',
-                             text: 'Nome não pode ficar em branco')
+                             text: 'Nome é obrigatório(a)')
     expect(page).to have_css('div.alert-error',
-                             text: 'Email não pode ficar em branco')
+                             text: 'Email é obrigatório(a)')
     expect(page).to have_css('div.alert-error',
-                             text: 'Bairro não pode ficar em branco')
+                             text: 'Bairro é obrigatório(a)')
     expect(page).to have_css('div.alert-error',
-                             text: 'Cidade - Estado não pode ficar em branco')
+                             text: 'Cidade - Estado é obrigatório(a)')
     expect(page).to have_css('div.alert-error',
-                             text: 'Telefone não pode ficar em branco')
+                             text: 'Telefone é obrigatório(a)')
   end
 end

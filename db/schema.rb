@@ -12,6 +12,39 @@
 
 ActiveRecord::Schema.define(version: 20171109214709) do
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "category_id"
+    t.integer "delivery_type_id"
+    t.integer "unity_id"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["delivery_type_id"], name: "index_products_on_delivery_type_id"
+    t.index ["unity_id"], name: "index_products_on_unity_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "unities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
