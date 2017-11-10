@@ -12,11 +12,22 @@ feature 'Cook signup' do
     fill_in 'Bairro', with: 'Sacomã'
     fill_in 'Cidade - Estado', with: 'São Paulo - SP'
     fill_in 'Telefone', with: '1191234-5678'
+    fill_in 'Descrição', with: 'Os mais maravilhosos salgados da tia Cleuza'
+    attach_file('Avatar', "#{Rails.root}/spec/support/fixtures/image.jpg")
     select 'Cozinheiro(a)', from: 'Eu sou'
     click_on 'Criar Conta'
 
-    expect(page).to have_css('div',
-                             text: 'Bem vindo! Você realizou seu registro com sucesso.')
+    msg = 'Bem vindo! Você realizou seu registro com sucesso.'
+    expect(page).to have_css('div', text: msg)
+    expect(page).to have_css('h1', text: 'Tia Cleuza')
+    expect(page).to have_css('dd', text: 'emaildatia@email.com')
+    expect(page).to have_css('dd', text: 'Sacomã')
+    expect(page).to have_css('dd', text: 'São Paulo - SP')
+    expect(page).to have_css('dd', text: '1191234-5678')
+    expect(page).to have_css('dd', text: 'Os mais maravilhosos salgados da tia Cleuza')
+    expect(page).to have_css('dd', text: 'Cozinheiro(a)')
+    save_page
+    expect(page).to have_xpath("//img[contains(@src,'image.jpg')]")
   end
 
   scenario 'validate fields' do
