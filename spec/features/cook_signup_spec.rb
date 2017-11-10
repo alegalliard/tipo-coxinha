@@ -19,13 +19,14 @@ feature 'Cook signup' do
 
     msg = 'Bem vindo! Você realizou seu registro com sucesso.'
     expect(page).to have_css('div', text: msg)
-    expect(page).to have_css('dd', text: 'Tia Cleuza')
+    expect(page).to have_css('h1', text: 'Tia Cleuza')
     expect(page).to have_css('dd', text: 'emaildatia@email.com')
     expect(page).to have_css('dd', text: 'Sacomã')
     expect(page).to have_css('dd', text: 'São Paulo - SP')
     expect(page).to have_css('dd', text: '1191234-5678')
     expect(page).to have_css('dd', text: 'Os mais maravilhosos salgados da tia Cleuza')
     expect(page).to have_css('dd', text: 'Cozinheiro(a)')
+    save_page
     expect(page).to have_xpath("//img[contains(@src,'image.jpg')]")
   end
 

@@ -5,13 +5,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_up_path_for(resource)
-    profile_path(resource.id)
-  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name neighborhood
                                                          city_state phone
-                                                         account_type avatar])
+                                                         account_type avatar
+                                                         description])
   end
 end

@@ -1,5 +1,7 @@
 pt-BR:
   activerecord:
+    models:
+      user: Usuário
     attributes:
       user:
         confirmation_sent_at: Confirmação enviada em
@@ -32,5 +34,3 @@ pt-BR:
         account_type: Eu sou
         avatar: Avatar
         description: Descrição
-    models:
-      user: Usuário
