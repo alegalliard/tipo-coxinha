@@ -1,5 +1,7 @@
 pt-BR:
   activerecord:
+    models:
+      user: Usuário
     attributes:
       user:
         confirmation_sent_at: Confirmação enviada em
@@ -30,5 +32,5 @@ pt-BR:
         city_state: Cidade - Estado
         phone: Telefone
         account_type: Eu sou
-    models:
-      user: Usuário
+        avatar: Avatar
+        description: Descrição
