@@ -1,6 +1,7 @@
+Rails:
+  Enabled: true
 AllCops:
-  Rails:
-    Enabled: true
+  TargetRailsVersion: 5.1
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -19,6 +20,5 @@ AllCops:
     - 'Gemfile'
     - 'vendor/**/*.rb'
   UseCache: false
-  TargetRailsVersion: 5.1
 Documentation:
   Enabled: false
