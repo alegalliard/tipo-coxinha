@@ -1,23 +1,23 @@
 <h1><%= @user.name %></h1>
 <%= image_tag (@user.avatar), class: 'avatar' %>
+<dl>
 
 <% if @user == current_user %>
-  <dl>
     <dt><%= t('activerecord.attributes.user.email') %></dt>
     <dd><%= @user.email %></dd>
-    <dt><%= t('activerecord.attributes.user.neighborhood') %></dt>
-    <dd><%= @user.neighborhood %></dd>
-    <dt><%= t('activerecord.attributes.user.city_state') %></dt>
-    <dd><%= @user.city_state %></dd>
     <dt><%= t('activerecord.attributes.user.phone') %></dt>
     <dd><%= @user.phone %></dd>
-    <dt><%= t('activerecord.attributes.user.description') %></dt>
-    <dd><%= @user.description %></dd>
     <dt><%= t('activerecord.attributes.user.account_type') %></dt>
     <dd><%= @user.account_type_convertion %></dd>
-  </dl>
 <% end %>
+<dt><%= t('activerecord.attributes.user.neighborhood') %></dt>
+<dd><%= @user.neighborhood %></dd>
+<dt><%= t('activerecord.attributes.user.city_state') %></dt>
+<dd><%= @user.city_state %></dd>
+<dt><%= t('activerecord.attributes.user.description') %></dt>
+<dd><%= @user.description %></dd>
 
+</dl>
 <% if @user.products.empty? %>
   <% if @user.account_type == 'cook' && @user == current_user %>
     <h3>Comece a cadastrar seus produtos ;)</h3>
