@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-11T15:38:48-02:00">2017-11-11T15:38:48-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-11T17:36:59-02:00">2017-11-11T17:36:59-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.87%</span></span>
+    (<span class="covered_percent"><span class="green">99.11%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.96
+       <span class="green">
+         1.01
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>39</b> files in total.
-    <b>326</b> relevant lines. 
-    <span class="green"><b>306</b> lines covered</span> and
-    <span class="red"><b>20</b> lines missed </span>
+    <b>337</b> relevant lines. 
+    <span class="green"><b>334</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,10 +72,10 @@
       
       <tr>
         <td class="strong"><a href="#f03eb4c7a5edd26b7ba412cd9c0cd05a3852c662" class="src_link" title="app/controllers/proposals_controller.rb">app/controllers/proposals_controller.rb</a></td>
-        <td class="yellow strong">90.0 %</td>
-        <td>23</td>
-        <td>10</td>
-        <td>9</td>
+        <td class="green strong">93.75 %</td>
+        <td>33</td>
+        <td>16</td>
+        <td>15</td>
         <td>1</td>
         <td>0.9</td>
       </tr>
@@ -123,7 +123,7 @@
       <tr>
         <td class="strong"><a href="#aaa692e5fee3416eb6740c725c71327ed2e5095c" class="src_link" title="app/models/product.rb">app/models/product.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
+        <td>13</td>
         <td>10</td>
         <td>10</td>
         <td>0</td>
@@ -133,11 +133,11 @@
       <tr>
         <td class="strong"><a href="#69c191f7bee7a345120e83ac089a77d5f04e4974" class="src_link" title="app/models/proposal.rb">app/models/proposal.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>5</td>
-        <td>5</td>
+        <td>15</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -402,12 +402,12 @@
       
       <tr>
         <td class="strong"><a href="#c22b03f0681f77dc420ea8693ec993268c19ff6b" class="src_link" title="spec/features/user_send_proposal_spec.rb">spec/features/user_send_proposal_spec.rb</a></td>
-        <td class="red strong">46.88 %</td>
+        <td class="green strong">100.0 %</td>
         <td>41</td>
         <td>32</td>
-        <td>15</td>
-        <td>17</td>
-        <td>0.5</td>
+        <td>32</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -635,10 +635,10 @@
         <div class="source_table" id="f03eb4c7a5edd26b7ba412cd9c0cd05a3852c662">
   <div class="header">
     <h3>app/controllers/proposals_controller.rb</h3>
-    <h4><span class="yellow">90.0 %</span> covered</h4>
+    <h4><span class="green">93.75 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -652,124 +652,124 @@
           <code class="ruby">class ProposalsController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  before_action :find_proposal, only: [:show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  def create</code>
+          <code class="ruby">  before_action :authenticate_user!, only: [:create, :show]  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">    @proposal = Proposal.new(portfolio_params)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    @proposal.user = current_user</code>
+          <code class="ruby">  def show; end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">    if @proposal.save</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @proposal = Proposal.new(portfolio_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @proposal.user = current_user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @proposal.calculate_total_price</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if @proposal.save    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
           <code class="ruby">      redirect_to @proposal</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">  def portfolio_params</code>
+          <code class="ruby">  def find_proposal</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    params.require(:proposal).permit(:delivery_date_time,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">                                     :observations,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">                                     :cooker_id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">                                     proposal_items_attributes: </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">                                      [:id, :product_id, :quantity, :price, :proposal_id]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">                                     )</code>
+          <code class="ruby">    @proposal = Proposal.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -779,6 +779,66 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def portfolio_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    params.require(:proposal).permit(:delivery_date_time,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">                                     :delivery_date,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">                                     :delivery_time,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">                                     :observations,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">                                     :cooker_id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">                                     proposal_items_attributes: </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">                                      [:id, :product_id, :quantity, :price, :proposal_id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
@@ -1038,18 +1098,6 @@
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
           <code class="ruby">end</code>
         </li>
       
@@ -1063,8 +1111,8 @@
     <h3>app/models/proposal.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1103,6 +1151,60 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def calculate_total_price</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    total_price = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    self.proposal_items.each do |proposal_item|</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      total_price += (proposal_item.quantity * proposal_item.price)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    self.total_price = total_price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -6182,7 +6284,7 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :proposals, only: [:create]</code>
+          <code class="ruby">  resources :proposals, only: %i[create show]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -6632,11 +6734,11 @@
         <div class="source_table" id="c22b03f0681f77dc420ea8693ec993268c19ff6b">
   <div class="header">
     <h3>spec/features/user_send_proposal_spec.rb</h3>
-    <h4><span class="red">46.88 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>32</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <span class="green"><b>32</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -6718,13 +6820,13 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;Coxinha&#39;, with: 50</code>
+          <code class="ruby">    fill_in &#39;Coxinha&#39;, with: 10</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;Empada&#39;, with: 100</code>
+          <code class="ruby">    fill_in &#39;Empada&#39;, with: 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -6757,116 +6859,116 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">    within(&#39;main&#39;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_content &#39;20/12/2017&#39;</code>
+          <code class="ruby">      save_page</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
+          <code class="ruby">      expect(page).to have_content &#39;20/12/2017 19:00&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_css(&#39;h3&#39;, text: user.name)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_css(&#39;img.avatar&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_css(&#39;p&#39;, text: user.phone)</code>
+          <code class="ruby">      expect(page).to have_content user.phone</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_css(&#39;p&#39;, text: user.email)</code>
+          <code class="ruby">      expect(page).to have_content user.email</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_css(&#39;h3&#39;, text: &#39;Produto&#39;)</code>
+          <code class="ruby">      expect(page).to have_css(&#39;h3&#39;, text: &#39;Produtos&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      within(&quot;div#product-#{coxinha.id}&quot;) do</code>
+          <code class="ruby">      within(&quot;tr#product-#{coxinha.id}&quot;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
           <code class="ruby">        expect(page).to have_content coxinha.name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        expect(page).to &#39;R$ 20,00&#39;</code>
+          <code class="ruby">        expect(page).to have_content &#39;R$ 20,00&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      within(&quot;div#product-#{empada.id}&quot;) do</code>
+          <code class="ruby">      within(&quot;tr#product-#{empada.id}&quot;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
           <code class="ruby">        expect(page).to have_content empada.name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        expect(page).to &#39;R$ 10,00&#39;</code>
+          <code class="ruby">        expect(page).to have_content &#39;R$ 10,00&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_css(&#39;h3&#39;, text: &#39;R$ 30,00&#39;)</code>
+          <code class="ruby">      expect(page).to have_content &#39;R$ 210,00&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(page).to have_css(&#39;h3&#39;, text: &quot;#{user.neighborhood} - #{user.city_state}&quot;)</code>
+          <code class="ruby">      expect(page).to have_content &quot;#{user.neighborhood} - #{user.city_state}&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
-          
-          <code class="ruby">      expect(page).to have_content &#39;19:00&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_content &#39;Enviar embalado&#39;</code>
         </li>

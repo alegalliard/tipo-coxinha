@@ -7,6 +7,10 @@ pt-BR:
       proposal:
         delivery_date_time: Data e hora de entrega
         observations: Observações
+        user:
+          phone: Telefone
+          email: Email
       proposal_item:
         quantity: Quantidade
         price: Preço da Unidade
+      

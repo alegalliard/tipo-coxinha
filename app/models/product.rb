@@ -10,6 +10,4 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
   validates :delivery_type_id, presence: true
   validates :unity_id, presence: true
-
-
 end

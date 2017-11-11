@@ -10,31 +10,31 @@ feature 'Visitor send proposal' do
 
     visit profile_path(cooker.id)
     save_page
-    fill_in 'Coxinha', with: 50
-    fill_in 'Empada', with: 100
+    fill_in 'Coxinha', with: 10
+    fill_in 'Empada', with: 1
 
     fill_in 'proposal_delivery_date_time', with: '20/12/2017 19:00'    
     fill_in 'Observações', with: 'Enviar embalado'
     click_on 'Enviar'
 
     within('main') do
-      expect(page).to have_content '20/12/2017 09:00'
+      save_page
+      expect(page).to have_content '20/12/2017 19:00'
       expect(page).to have_css('h3', text: user.name)
       expect(page).to have_css('img.avatar')
-      expect(page).to have_css('p', text: user.phone)
-      expect(page).to have_css('p', text: user.email)
-      expect(page).to have_css('h3', text: 'Produto')
-      within("div#product-#{coxinha.id}") do
+      expect(page).to have_content user.phone
+      expect(page).to have_content user.email
+      expect(page).to have_css('h3', text: 'Produtos')
+      within("tr#product-#{coxinha.id}") do
         expect(page).to have_content coxinha.name
-        expect(page).to 'R$ 20,00'
+        expect(page).to have_content 'R$ 20,00'
       end
-      within("div#product-#{empada.id}") do
+      within("tr#product-#{empada.id}") do
         expect(page).to have_content empada.name
-        expect(page).to 'R$ 10,00'
+        expect(page).to have_content 'R$ 10,00'
       end
-      expect(page).to have_css('h3', text: 'R$ 30,00')
-      expect(page).to have_css('h3', text: "#{user.neighborhood} - #{user.city_state}")
-      expect(page).to have_content '19:00'
+      expect(page).to have_content 'R$ 210,00'
+      expect(page).to have_content "#{user.neighborhood} - #{user.city_state}"
       expect(page).to have_content 'Enviar embalado'
     end
   end
