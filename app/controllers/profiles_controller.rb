@@ -6,5 +6,5 @@ class ProfilesController < ApplicationController
     @user.products.each do |product|
       @proposal.proposal_items.build(product: product)
     end
-  end
+  end  
 end

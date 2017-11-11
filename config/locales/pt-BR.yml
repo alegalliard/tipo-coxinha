@@ -108,7 +108,7 @@ pt-BR:
       second: Segundo
       year: Ano
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: deve ser aceito
       blank: "%{attribute} é obrigatório(a)"

@@ -1,6 +1,5 @@
 <h1><%= @user.name %></h1>
 <%= image_tag (@user.avatar), class: 'avatar' %>
-
 <% if @user == current_user %>
   <dl>
     <dt><%= t('activerecord.attributes.user.email') %></dt>
@@ -27,6 +26,14 @@
 <% else %>
   <% if user_signed_in? %>
     <h2>Envie um Pedido</h2>
+    
+    <% if !flash[:error].nil? %>
+      <% flash[:error].each do |message| %>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
     <%= simple_form_for @proposal, html:{class:'form-horizontal'}, wrapper: :horizontal_form do |f| %>
       <%= f.hidden_field :cooker_id, value: params[:id]  %>
       <h3>Produtos</h3>

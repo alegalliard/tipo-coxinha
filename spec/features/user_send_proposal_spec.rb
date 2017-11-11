@@ -9,7 +9,6 @@ feature 'Visitor send proposal' do
     empada = create(:product, name: 'Empada', user: cooker, price: 10)
 
     visit profile_path(cooker.id)
-    save_page
     fill_in 'Coxinha', with: 10
     fill_in 'Empada', with: 1
 
@@ -18,7 +17,6 @@ feature 'Visitor send proposal' do
     click_on 'Enviar'
 
     within('main') do
-      save_page
       expect(page).to have_content '20/12/2017 19:00'
       expect(page).to have_css('h3', text: user.name)
       expect(page).to have_css('img.avatar')
@@ -37,5 +35,20 @@ feature 'Visitor send proposal' do
       expect(page).to have_content "#{user.neighborhood} - #{user.city_state}"
       expect(page).to have_content 'Enviar embalado'
     end
+  end
+  scenario 'and fills nothing' do
+    cooker = create(:user, name: 'Zezinho', email: 'test@test.com')
+    user = create(:user, name: 'Luisinho', email: 'user@test.com')
+    login_as(user, scope: :user)
+    coxinha = create(:product, name: 'Coxinha', user: cooker, price: 20)
+    empada = create(:product, name: 'Empada', user: cooker, price: 10)
+
+    visit profile_path(cooker.id)
+    click_on 'Enviar'
+    
+    expect(page).to have_content 'Quantidade é obrigatório(a)'
+    expect(page).to have_content 'Data e hora de entrega é obrigatório(a)'
+
+    expect(current_path).to match profiles_path(cooker)
   end
 end

@@ -7,11 +7,13 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(portfolio_params)
     @proposal.user = current_user
-    @proposal.calculate_total_price
-    if @proposal.save    
+    if @proposal.valid?
+      @proposal.calculate_total_price
+      @proposal.save
       redirect_to @proposal
     else
-      redirect_to root_path
+      flash[:error] = @proposal.errors.full_messages
+      redirect_to profile_path(@proposal.cooker_id)
     end
   end
 

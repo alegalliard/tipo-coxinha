@@ -4,10 +4,15 @@ class Proposal < ApplicationRecord
   has_many :proposal_items
   accepts_nested_attributes_for :proposal_items
 
+  validates :delivery_date_time,
+            :proposal_items, presence: true
+
   def calculate_total_price
     total_price = 0
-    self.proposal_items.each do |proposal_item|
-      total_price += (proposal_item.quantity * proposal_item.price)
+    if self.proposal_items.any?
+      self.proposal_items.each do |proposal_item|
+        total_price += (proposal_item.quantity * proposal_item.price)
+      end
     end
 
     self.total_price = total_price
