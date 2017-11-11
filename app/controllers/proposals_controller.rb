@@ -2,7 +2,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(portfolio_params)
-    byebug
     @proposal.user = current_user
     if @proposal.save
       redirect_to @proposal
@@ -17,7 +16,7 @@ class ProposalsController < ApplicationController
     params.require(:proposal).permit(:delivery_date_time,
                                      :observations,
                                      :cooker_id,
-                                     proposal_items: 
+                                     proposal_items_attributes: 
                                       [:id, :product_id, :quantity, :price, :proposal_id]
                                      )
   end

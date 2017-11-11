@@ -13,16 +13,12 @@ feature 'Visitor send proposal' do
     fill_in 'Coxinha', with: 50
     fill_in 'Empada', with: 100
 
-    select('20', from: 'proposal_delivery_date_time_3i').select_option
-    select('Dezembro', from: 'proposal_delivery_date_time_2i').select_option
-    select('2017', from: 'proposal_delivery_date_time_1i').select_option
-    select('19', from: 'proposal_delivery_date_time_4i').select_option
-    select('00', from: 'proposal_delivery_date_time_5i').select_option
+    fill_in 'proposal_delivery_date_time', with: '20/12/2017 19:00'    
     fill_in 'Observações', with: 'Enviar embalado'
     click_on 'Enviar'
 
     within('main') do
-      expect(page).to have_content '20/12/2017'
+      expect(page).to have_content '20/12/2017 09:00'
       expect(page).to have_css('h3', text: user.name)
       expect(page).to have_css('img.avatar')
       expect(page).to have_css('p', text: user.phone)

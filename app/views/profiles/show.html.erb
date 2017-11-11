@@ -7,6 +7,7 @@
   <% if user_signed_in? %>
     <h2>Envie um Pedido</h2>
     <%= simple_form_for @proposal, html:{class:'form-horizontal'}, wrapper: :horizontal_form do |f| %>
+      <%= f.hidden_field :cooker_id, value: params[:id]  %>
       <h3>Produtos</h3>
       <table>
         <tr>
@@ -15,14 +16,15 @@
           <th><%= t('activerecord.attributes.product.unity') %></th>
           <th><%= t('activerecord.attributes.proposal_item.price') %></th>
         </tr>
-        <%= f.simple_fields_for :proposal_items do |proposal_item_form| %>
+        <%= f.fields_for :proposal_items do |proposal_item_form| %>
           <div class="row">
             <tr>
+              <%= proposal_item_form.hidden_field :product_id, value: proposal_item_form.object.product.id %>                
               <th><%= proposal_item_form.label :product, proposal_item_form.object.product.name, for: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product" %></th>
               <th><%= proposal_item_form.text_field :quantity, id: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product" %></th>
-              <th><%= proposal_item_form.label :unity, proposal_item_form.object.product.unity.name %></th>            
+              <th><%= proposal_item_form.label :unity, proposal_item_form.object.product.unity.name %></th>
               <th><%= number_to_currency proposal_item_form.object.product.price %></th>
-              <%= hidden_field(:proposal_items_attributes, :price, value: proposal_item_form.object.product.price) %>
+              <%= proposal_item_form.hidden_field :price, value: proposal_item_form.object.product.price %>                              
             </tr>
           </div>
         <% end %>
