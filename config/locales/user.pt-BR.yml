@@ -1,4 +1,6 @@
 pt-BR:
+  cook: 'Cozinheiro(a)'
+  user: 'Usuário(a)'
   activerecord:
     models:
       user: Usuário
@@ -34,3 +36,7 @@ pt-BR:
         account_type: Eu sou
         avatar: Avatar
         description: Descrição
+        address: Endereço
+        address_number: Número
+        address_detail: Complemento
+        postal_code: CEP

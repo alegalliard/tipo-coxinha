@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name neighborhood
                                                          city_state phone
                                                          account_type avatar
-                                                         description])
+                                                         description address
+                                                         address_number
+                                                         address_detail
+                                                         postal_code])
   end
 end

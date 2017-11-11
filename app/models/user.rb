@@ -11,10 +11,5 @@ class User < ApplicationRecord
 
   has_many :products
 
-  def account_type_convertion
-    user_type = 'Usuário'
-    if self.account_type == 'cook'
-      user_type = 'Cozinheiro(a)'
-    end
-  end
+  
 end
