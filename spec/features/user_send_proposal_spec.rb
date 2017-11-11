@@ -12,8 +12,12 @@ feature 'Visitor send proposal' do
     save_page
     fill_in 'Coxinha', with: 50
     fill_in 'Empada', with: 100
-    fill_in 'Data de Entrega', with: '20/12/2017'
-    fill_in 'Horário', with: '19:00'
+
+    select('20', from: 'proposal_delivery_date_time_3i').select_option
+    select('Dezembro', from: 'proposal_delivery_date_time_2i').select_option
+    select('2017', from: 'proposal_delivery_date_time_1i').select_option
+    select('19', from: 'proposal_delivery_date_time_4i').select_option
+    select('00', from: 'proposal_delivery_date_time_5i').select_option
     fill_in 'Observações', with: 'Enviar embalado'
     click_on 'Enviar'
 
