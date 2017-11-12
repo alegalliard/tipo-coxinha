@@ -18,3 +18,5 @@ pt-BR:
         unity_id: 'Unidade'
         price: 'Preço em R$'
         submit: 'Cadastrar'
+      proposal:
+        submit: Enviar Pedido

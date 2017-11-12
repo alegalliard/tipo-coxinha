@@ -60,6 +60,8 @@ pt-BR:
     - :month
     - :year
   datetime:
+    formats:
+      default: "%d/%m/%Y %H:%M"
     distance_in_words:
       about_x_hours:
         one: aproximadamente 1 hora
@@ -106,7 +108,7 @@ pt-BR:
       second: Segundo
       year: Ano
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: deve ser aceito
       blank: "%{attribute} é obrigatório(a)"
