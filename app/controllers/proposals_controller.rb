@@ -1,19 +1,16 @@
 class ProposalsController < ApplicationController
-  before_action :find_proposal, only: [:show]
-  before_action :authenticate_user!, only: [:create, :show]  
+  before_action :find_proposal, only: %i[show]
+  before_action :authenticate_user!, only: %i[create show]
 
   def show; end
 
   def create
     @proposal = Proposal.new(portfolio_params)
     @proposal.user = current_user
-    if @proposal.valid?
-      @proposal.calculate_total_price
-      @proposal.save
+    if @proposal.save
       redirect_to @proposal
     else
-      flash[:error] = @proposal.errors.full_messages
-      redirect_to profile_path(@proposal.cooker_id)
+      redirect_to profile_path(@proposal.cooker_id), alert: @proposal.errors.full_messages
     end
   end
 

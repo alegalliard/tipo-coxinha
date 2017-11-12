@@ -8,6 +8,7 @@ FactoryBot.define do
     phone '1191234-5678'
     account_type 0
     avatar { File.new("#{Rails.root}/spec/support/fixtures/image.jpg") }
+    avatar File.new(Rails.root.join('spec', 'support', 'fixtures', 'image.jpg'))   
     description 'Os melhores salgados feitos pela Tia Cleuza'
   end
 end

@@ -3,6 +3,7 @@ class Proposal < ApplicationRecord
   belongs_to :cooker, class_name: 'User'
   has_many :proposal_items
   accepts_nested_attributes_for :proposal_items
+  before_save :calculate_total_price
 
   validates :delivery_date_time,
             :proposal_items, presence: true
