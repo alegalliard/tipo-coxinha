@@ -6,10 +6,6 @@ $(function () {
     });
 });
 
-function isNumber(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-}
-
 function Calculate() {
     var total = 0;
     $("#proposal_table").find('tr').each(function () {
@@ -19,7 +15,7 @@ function Calculate() {
         price = moneyToInt(price);
 
         var priceTotal = (quantity * price);
-        total += isNumber(priceTotal) ? priceTotal : 0;
+        total += priceTotal ? priceTotal : 0;
         var quantityTotal = calculateQuantity(unity, quantity)
         var real = numberToReal(priceTotal);
         $(this).find('.total_price').text(real ? real : "");
