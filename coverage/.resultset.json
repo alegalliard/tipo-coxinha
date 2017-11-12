@@ -213,7 +213,7 @@
         null,
         null,
         null,
-        null
+        1
       ],
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/config/initializers/backtrace_silencers.rb": [
         null,
@@ -1430,6 +1430,6 @@
         null
       ]
     },
-    "timestamp": 1510488808
+    "timestamp": 1510498192
   }
 }

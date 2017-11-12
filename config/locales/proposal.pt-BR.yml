@@ -10,7 +10,9 @@ pt-BR:
         user:
           phone: Telefone
           email: Email
+        total_quantity: Quantidade Total
+        total_price: Preço
       proposal_item:
         quantity: Quantidade
-        price: Preço da Unidade
+        price: Valor
       
