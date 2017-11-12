@@ -10,7 +10,8 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to @proposal
     else
-      redirect_to profile_path(@proposal.cooker_id), alert: @proposal.errors.full_messages
+      alert = @proposal.errors.full_messages
+      redirect_to profile_path(@proposal.cooker_id), alert: alert
     end
   end
 
@@ -26,7 +27,9 @@ class ProposalsController < ApplicationController
                                      :delivery_time,
                                      :observations,
                                      :cooker_id,
-                                     proposal_items_attributes: 
-                                      [:id, :product_id, :quantity, :price, :proposal_id])
+                                     proposal_items_attributes:
+                                      %I[id product_id
+                                         quantity price
+                                         proposal_id])
   end
 end
