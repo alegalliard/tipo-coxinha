@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-
-  before_action :authenticate_user!, only: [:show, :new, :create]
+  before_action :authenticate_user!, only: %i[show new create]
   before_action :find_product, only: [:show]
 
   def show; end
@@ -22,6 +21,7 @@ class ProductsController < ApplicationController
   end
 
   private
+
   def product_params
     params.require(:product).permit(:name, :category_id, :delivery_type_id,
                                     :unity_id, :price)

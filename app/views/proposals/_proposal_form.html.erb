@@ -1,0 +1,47 @@
+<h2>Envie um Pedido</h2>
+
+<% if !flash[:alert].nil? %>
+  <% flash[:alert].each do |message| %>
+    <div class="alert alert-danger">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+<%= simple_form_for proposal, html:{class:'form-horizontal'}, wrapper: :horizontal_form do |f| %>
+  <%= f.hidden_field :cooker_id, value: params[:id]  %>
+  <h3>Produtos</h3>
+  <table id="proposal_table">
+    <tr>
+      <th><%= t('activerecord.models.product') %></th>
+      <th><%= t('activerecord.attributes.proposal_item.quantity') %></th>
+      <th><%= t('activerecord.models.delivery_type') %></th>      
+      <th><%= t('activerecord.attributes.product.unity') %></th>
+      <th><%= t('activerecord.attributes.proposal_item.price') %> <%=  %></th>
+      <th><%= t('activerecord.attributes.proposal.total_quantity') %></th>
+      <th><%= t('activerecord.attributes.proposal.total_price') %></th>
+    </tr>
+    <%= f.fields_for :proposal_items do |proposal_item_form| %>
+      <div class="row">
+        <tr>
+          <%= proposal_item_form.hidden_field :product_id, value: proposal_item_form.object.product.id %>                
+          <th><%= proposal_item_form.label :product, proposal_item_form.object.product.name, for: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product" %></th>
+          <th><%= proposal_item_form.number_field :quantity, id: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product", class: 'form-control quantity' %></th>
+          <th><%= proposal_item_form.label :delivery_type_id, proposal_item_form.object.product.delivery_type.name %></th>          
+          <th><%= proposal_item_form.label :unity, proposal_item_form.object.product.unity.name, class: 'unity' %></th>
+          <th class="price"><%= number_to_currency proposal_item_form.object.product.price %></th>
+          <th class="total_quantity">0</th>
+          <th class="total_price"><%= number_to_currency 0 %></th> 
+          <%= proposal_item_form.hidden_field :price, value: proposal_item_form.object.product.price %>                              
+        </tr>
+      </div>
+    <% end %>
+  </table>
+  <h5>Valor Total:</h5>
+  <p id="price_sum"><%= number_to_currency 0 %></p>
+  <%= f.input :delivery_date_time, as: :datetime, html5: true %>       
+  <%= f.input :observations %>
+  <%= f.button :submit, t('simple_form.labels.proposal.submit'), class: 'btn btn-primary' %>
+  <%= link_to t('simple_form.back'), root_path, class: 'btn btn-secondary' %>
+<% end %>
+
+<%= javascript_include_tag 'profiles.js' %>
