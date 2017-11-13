@@ -33,4 +33,24 @@ feature 'View list of proposals' do
 
     expect(page).to have_content 'Você ainda não possui nenhuma proposta'
   end
+  scenario 'and see proposal details' do
+    cook = create(:user, name: 'Zezinho')
+    login_as(cook, scope: :user)
+    proposal = create(:proposal,
+                      delivery_date_time: '16/11/2017 09:00',
+                      cooker: cook)
+    create(:proposal, delivery_date_time: '16/11/2017 09:00',
+                      cooker: cook)
+
+    visit root_path
+    click_on 'Minhas Propostas'
+    within("tr#proposal-#{proposal.id}") do
+      click_on 'Detalhes'
+    end
+
+    expect(page).to have_content proposal.delivery_date_time
+    expect(page).to have_content proposal.user.name
+    expect(page).to have_content 'R$ 50,00'
+    expect(page).to have_content proposal.observations
+  end
 end
