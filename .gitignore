@@ -16,11 +16,10 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/coverage/*
+coverage/
 /spec/test_files/*
 
 /node_modules
 /yarn-error.log
 
 .byebug_history
-coverage

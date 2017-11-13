@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-13T13:54:12-02:00">2017-11-13T13:54:12-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-13T14:27:58-02:00">2017-11-13T14:27:58-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">99.26%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.14
+         1.13
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>49</b> files in total.
-    <b>531</b> relevant lines. 
-    <span class="green"><b>531</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>537</b> relevant lines. 
+    <span class="green"><b>533</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -413,7 +413,7 @@
       <tr>
         <td class="strong"><a href="#7719b274507d40ae7078bbb67f69b2f30cae265c" class="src_link" title="spec/factories/proposals.rb">spec/factories/proposals.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
+        <td>15</td>
         <td>9</td>
         <td>9</td>
         <td>0</td>
@@ -462,12 +462,12 @@
       
       <tr>
         <td class="strong"><a href="#699b11adf983e286fae7d77f1236f6c2afc73bcf" class="src_link" title="spec/features/cook_view_proposals_spec.rb">spec/features/cook_view_proposals_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="red strong">63.64 %</td>
+        <td>16</td>
+        <td>11</td>
+        <td>7</td>
+        <td>4</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -7173,7 +7173,7 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -7191,22 +7191,34 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      proposal.proposal_items = create_list(:proposal_item, 5, proposal: proposal, product: product)</code>
+          <code class="ruby">      proposal.proposal_items = create_list(:proposal_item,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                            5, proposal: proposal,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                                               product: product)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -7301,7 +7313,7 @@
         <li class="covered" data-hits="11" data-linenumber="4">
           <span class="hits">11</span>
           
-          <code class="ruby">    sequence(:email) { |n| &quot;tia#{n}@cleuza.com&quot; } </code>
+          <code class="ruby">    sequence(:email) { |n| &quot;tia#{n}@cleuza.com&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -7962,11 +7974,11 @@
         <div class="source_table" id="699b11adf983e286fae7d77f1236f6c2afc73bcf">
   <div class="header">
     <h3>spec/features/cook_view_proposals_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">63.64 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -8000,7 +8012,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    cooker = create(:user, name: &#39;Zezinho&#39;, email: &#39;test@test.com&#39;)</code>
+          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;, email: &#39;test@test.com&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
@@ -8012,10 +8024,58 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit root_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">    expect(current_path).to match proposal_path(cook)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    expect(page).to have_content proposal.delivery_date_time</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    expect(page).to have_content proposal.user.name</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    expect(page).to have_content proposal.total_price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
