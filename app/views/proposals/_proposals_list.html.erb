@@ -1,0 +1,44 @@
+<table class="table table-striped">
+  <thead>
+    <th><%= t('activerecord.attributes.proposal.delivery_date_time') %></th>
+    <th><%= t('activerecord.attributes.proposal.proposal_user') %></th>
+    <th><%= t('activerecord.attributes.proposal.total_price') %></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% proposals.each do |proposal| %>
+      <tr id="proposal-<%= proposal.id %>">
+        <th><%= proposal.delivery_date_time.to_datetime.strftime("%d/%m/%Y %H:%M") %></th>
+        <th><%= proposal.user.name %></th>
+        <th><%= number_to_currency proposal.total_price %></th>
+        <th>
+          <button class="btn btn-info" data-toggle="collapse"
+            data-target="#proposal-collapse-<%= proposal.id %>" aria-expanded="false"
+            aria-controls="proposal-collapse-<%= proposal.id %>">
+            <i class="fa fa-search"></i>
+            Detalhes
+          </button>
+        </th>
+        <th>
+          <button class="btn btn-success">
+            <i class="fa fa-thumbs-o-up"></i>
+          </button>
+          <button class="btn btn-danger">
+            <i class="fa fa-thumbs-o-down"></i>
+          </button>
+        </th>
+      </tr>
+      <tr>
+        <th colspan="5">
+        <div class="collapse" id="proposal-collapse-<%= proposal.id %>">
+          <div class="card card-body">
+            <%= render proposal %>
+          </div>
+        </div>
+      </th>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
