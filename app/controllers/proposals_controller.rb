@@ -25,7 +25,7 @@ class ProposalsController < ApplicationController
       @proposal.accepted!
       redirect_to request.referer
     else
-      redirect_to root_path
+      redirect_to root_path, error: 'Ação não autorizada'
     end
   end
 
