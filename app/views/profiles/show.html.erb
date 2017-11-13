@@ -36,13 +36,10 @@
     <h3>Desculpe, este cozinheiro ainda não cadastrou seus produtos =(</h3>
   <% end %>
 <% else %>
-  <h2>Produtos</h2>
-  <% @user.products.each do |product| %>
-     <div class="row">
-      <div class="col-md-6" id="product-<%= product.id %>">
-        <%= product.name  %>
-        <%= number_to_currency product.price %>
-      </div>
-    </div>
-  <% end  %>
+  <% if user_signed_in? %>
+    <%= render partial: "proposals/proposal_form", locals: {proposal: @proposal} %>
+  <% else %>
+    <h2>Produtos</h2>
+    <%= render @user.products %>
+   <% end %>
 <% end %>

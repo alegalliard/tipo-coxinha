@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110233740) do
+ActiveRecord::Schema.define(version: 20171111192903) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,29 @@ ActiveRecord::Schema.define(version: 20171110233740) do
     t.index ["delivery_type_id"], name: "index_products_on_delivery_type_id"
     t.index ["unity_id"], name: "index_products_on_unity_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "proposal_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "quantity"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "proposal_id"
+    t.index ["product_id"], name: "index_proposal_items_on_product_id"
+    t.index ["proposal_id"], name: "index_proposal_items_on_proposal_id"
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string "delivery_date_time"
+    t.text "observations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "cooker_id"
+    t.decimal "total_price"
+    t.index ["cooker_id"], name: "index_proposals_on_cooker_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id"
   end
 
   create_table "unities", force: :cascade do |t|

@@ -11,7 +11,8 @@ feature 'Cook session' do
     fill_in 'Senha', with: user.password
     click_on 'Log in'
 
-    expect(page).to have_css('div.alert-success', text: 'Login efetuado com sucesso.')
+    expect(page)
+      .to have_css('div.alert-success', text: 'Login efetuado com sucesso.')
   end
   scenario 'and logout' do
     user = create(:user)
@@ -22,6 +23,7 @@ feature 'Cook session' do
     click_on 'Sair'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_css('div.alert-success', text: 'Logout efetuado com sucesso.')
+    expect(page)
+      .to have_css('div.alert-success', text: 'Logout efetuado com sucesso.')
   end
 end

@@ -16,7 +16,8 @@ feature 'user sign up' do
     fill_in 'Bairro', with: 'Perus'
     fill_in 'Cidade - Estado', with: 'São Paulo - SP'
     fill_in 'Telefone', with: '1199834-5678'
-    attach_file('Avatar', "#{Rails.root}/spec/support/fixtures/image.jpg")
+    attach_file('Avatar',
+                Rails.root.join('spec', 'support', 'fixtures', 'image.jpg'))
     select 'Usuário(a)', from: 'Eu sou'
     click_on 'Criar Conta'
 

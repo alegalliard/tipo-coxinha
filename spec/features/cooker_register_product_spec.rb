@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-feature "Cooker register product" do
+feature 'Cooker register product' do
   scenario 'successfully' do
     create(:category, name: 'Salgado')
     create(:delivery_type, name: 'Congelado')

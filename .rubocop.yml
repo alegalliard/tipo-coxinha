@@ -15,10 +15,15 @@ AllCops:
     - 'config/environments/*'
     - 'bin/yarn'
     - 'config/initializers/simple_form_bootstrap.rb'
+    - 'config/initializers/backtrace_silencers.rb'
+    - 'config/initializers/wrap_parameters.rb'
     - 'config/initializers/simple_form.rb'
     - 'config/initializers/devise.rb'
+    - 'vendor/**/*'
     - 'Gemfile'
     - 'vendor/**/*.rb'
   UseCache: false
 Documentation:
   Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'feature', 'scenario']

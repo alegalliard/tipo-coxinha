@@ -12,8 +12,12 @@ feature 'Cook signup' do
     fill_in 'Bairro', with: 'Sacomã'
     fill_in 'Cidade - Estado', with: 'São Paulo - SP'
     fill_in 'Telefone', with: '1191234-5678'
-    fill_in 'Descrição', with: 'Os mais maravilhosos salgados da tia Cleuza'
-    attach_file('Avatar', "#{Rails.root}/spec/support/fixtures/image.jpg")
+    fill_in 'Descrição', with: 'Os mais maravilhosos'\
+                               ' salgados da tia Cleuza'
+    attach_file('Avatar', Rails.root.join('spec',
+                                          'support',
+                                          'fixtures',
+                                          'image.jpg'))
     select 'Cozinheiro(a)', from: 'Eu sou'
     click_on 'Criar Conta'
 
@@ -24,7 +28,8 @@ feature 'Cook signup' do
     expect(page).to have_css('dd', text: 'Sacomã')
     expect(page).to have_css('dd', text: 'São Paulo - SP')
     expect(page).to have_css('dd', text: '1191234-5678')
-    expect(page).to have_css('dd', text: 'Os mais maravilhosos salgados da tia Cleuza')
+    expect(page).to have_css('dd', text: 'Os mais maravilhosos'\
+                                         ' salgados da tia Cleuza')
     expect(page).to have_css('dd', text: 'Cozinheiro(a)')
     expect(page).to have_xpath("//img[contains(@src,'image.jpg')]")
   end
