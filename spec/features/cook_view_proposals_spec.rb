@@ -24,4 +24,13 @@ feature 'View list of proposals' do
     expect(page).not_to have_content '16/11/2017 10:00'
     expect(page).not_to have_content other_proposal.user.name
   end
+  scenario 'and has no proposals' do
+    cook = create(:user, name: 'Zezinho')
+    login_as(cook, scope: :user)
+
+    visit root_path
+    click_on 'Minhas Propostas'
+
+    expect(page).to have_content 'Você ainda não possui nenhuma proposta'
+  end
 end

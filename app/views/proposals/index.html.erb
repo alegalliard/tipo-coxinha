@@ -1,27 +1,31 @@
 <div>
-  <table class="table table-striped">
-    <thead>
-      <th><%= t('activerecord.attributes.proposal.delivery_date_time') %></th>
-      <th><%= t('activerecord.attributes.proposal.proposal_user') %></th>
-      <th><%= t('activerecord.attributes.proposal.total_price') %></th>
-      <th></th>
-    </thead>
-    <tbody>
-      <% @proposals.each do |proposal| %>
-        <tr id="proposal-<%= proposal.id %>">
-          <th><%= proposal.delivery_date_time.to_datetime.strftime("%d/%m/%Y %H:%M") %></th>
-          <th><%= proposal.user.name %></th>
-          <th><%= number_to_currency proposal.total_price %></th>
-          <th>
-            <button class="btn btn-primary">
-              <i class="fa fa-thumbs-o-up"></i>
-            </button>
-            <button class="btn btn-danger">
-              <i class="fa fa-thumbs-o-down"></i>   
-            </button>       
-          </th>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% if @proposals.any? %>
+    <table class="table table-striped">
+      <thead>
+        <th><%= t('activerecord.attributes.proposal.delivery_date_time') %></th>
+        <th><%= t('activerecord.attributes.proposal.proposal_user') %></th>
+        <th><%= t('activerecord.attributes.proposal.total_price') %></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @proposals.each do |proposal| %>
+          <tr id="proposal-<%= proposal.id %>">
+            <th><%= proposal.delivery_date_time.to_datetime.strftime("%d/%m/%Y %H:%M") %></th>
+            <th><%= proposal.user.name %></th>
+            <th><%= number_to_currency proposal.total_price %></th>
+            <th>
+              <button class="btn btn-primary">
+                <i class="fa fa-thumbs-o-up"></i>
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa fa-thumbs-o-down"></i>
+              </button>
+            </th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h4>Você ainda não possui nenhuma proposta</h4>
+  <% end %>
 </div>
