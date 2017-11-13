@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :find_proposal, only: %i[show accept]
-  before_action :authenticate_user!, only: %i[create show index]
+  before_action :authenticate_user!, only: %i[create show index accept]
 
   def index
     user_type = user_cook? ? :cooker : :user
@@ -21,8 +21,12 @@ class ProposalsController < ApplicationController
   end
 
   def accept
-    @proposal.accepted!
-    redirect_to request.referer
+    if @proposal.cook == current_user
+      @proposal.accepted!
+      redirect_to request.referer
+    else
+      redirect_to root_path
+    end
   end
 
   private
