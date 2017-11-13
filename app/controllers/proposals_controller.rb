@@ -1,6 +1,10 @@
 class ProposalsController < ApplicationController
   before_action :find_proposal, only: %i[show]
-  before_action :authenticate_user!, only: %i[create show]
+  before_action :authenticate_user!, only: %i[create show index]
+
+  def index
+    @proposals = Proposal.where(cooker: current_user)
+  end
 
   def show; end
 

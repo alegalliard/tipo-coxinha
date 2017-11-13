@@ -7,11 +7,12 @@ pt-BR:
       proposal:
         delivery_date_time: Data e hora de entrega
         observations: Observações
+        proposal_user: Nome do Comprador
         user:
           phone: Telefone
           email: Email
         total_quantity: Quantidade Total
-        total_price: Preço
+        total_price: Valor Total
       proposal_item:
         quantity: Quantidade
         price: Valor
