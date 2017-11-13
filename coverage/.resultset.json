@@ -147,6 +147,7 @@
       ],
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/config/environments/test.rb": [
         1,
+        1,
         null,
         null,
         null,
@@ -905,10 +906,12 @@
         1,
         1,
         1,
+        1,
         null,
         null
       ],
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/spec/factories/proposal_items.rb": [
+        1,
         1,
         1,
         1,
@@ -922,6 +925,13 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -936,7 +946,7 @@
         1,
         1,
         1,
-        1,
+        11,
         1,
         1,
         1,
@@ -1062,6 +1072,16 @@
         null,
         1,
         null,
+        null,
+        null
+      ],
+      "/Users/HenriqueMorato/CampusCode/tipo-coxinha/spec/features/cook_view_proposals_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -1298,14 +1318,14 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
         2,
+        2,
+        2,
+        7,
         null,
         null,
         null,
-        1,
+        2,
         null,
         null
       ],
@@ -1333,6 +1353,15 @@
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/app/models/unity.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/HenriqueMorato/CampusCode/tipo-coxinha/app/models/proposal_item.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/app/controllers/products_controller.rb": [
@@ -1383,15 +1412,6 @@
         null,
         null
       ],
-      "/Users/HenriqueMorato/CampusCode/tipo-coxinha/app/models/proposal_item.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
       "/Users/HenriqueMorato/CampusCode/tipo-coxinha/app/controllers/proposals_controller.rb": [
         1,
         1,
@@ -1430,6 +1450,6 @@
         null
       ]
     },
-    "timestamp": 1510498422
+    "timestamp": 1510588452
   }
 }
