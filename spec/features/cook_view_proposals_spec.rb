@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'View list of proposals' do
   scenario 'and has proposals' do
-    cook = create(:user, name: 'Zezinho')
-    login_as(cook, scope: :user)
+    cook = create(:user, name: 'Zezinho', email: 'cook@tipocoxinha.com',
+                         password: '12345678')
     proposal = create(:proposal,
                       delivery_date_time: '16/11/2017 09:00',
                       cooker: cook)
@@ -13,6 +13,10 @@ feature 'View list of proposals' do
                             user: other_user)
 
     visit root_path
+    click_on 'Login'
+    fill_in 'Email', with: cook.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Log in'
     click_on 'Minhas Propostas'
 
     expect(current_path).to match proposals_path
@@ -25,17 +29,21 @@ feature 'View list of proposals' do
     expect(page).not_to have_content other_proposal.user.name
   end
   scenario 'and has no proposals' do
-    cook = create(:user, name: 'Zezinho')
-    login_as(cook, scope: :user)
+    cook = create(:user, name: 'Zezinho', email: 'cook@tipocoxinha.com',
+                         password: '12345678')
 
     visit root_path
+    click_on 'Login'
+    fill_in 'Email', with: cook.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Log in'
     click_on 'Minhas Propostas'
 
     expect(page).to have_content 'Você ainda não possui nenhuma proposta'
   end
   scenario 'and see proposal details' do
-    cook = create(:user, name: 'Zezinho')
-    login_as(cook, scope: :user)
+    cook = create(:user, name: 'Zezinho', email: 'cook@tipocoxinha.com',
+                         password: '12345678')
     proposal = create(:proposal,
                       delivery_date_time: '16/11/2017 09:00',
                       cooker: cook)
@@ -43,6 +51,10 @@ feature 'View list of proposals' do
                       cooker: cook)
 
     visit root_path
+    click_on 'Login'
+    fill_in 'Email', with: cook.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Log in'
     click_on 'Minhas Propostas'
     within("tr#proposal-#{proposal.id}") do
       click_on 'Detalhes'
@@ -55,8 +67,8 @@ feature 'View list of proposals' do
   end
   scenario 'and view send proposals as user' do
     cook = create(:user, name: 'Zezinho')
-    user = create(:user, name: 'Luisinho', account_type: 1)
-    login_as(user, scope: :user)
+    user = create(:user, name: 'Zezinho', email: 'cook@tipocoxinha.com',
+                         password: '12345678', account_type: 1)
     proposal = create(:proposal,
                       delivery_date_time: '16/11/2017 09:00',
                       user: user)
@@ -64,6 +76,10 @@ feature 'View list of proposals' do
                       cooker: cook)
 
     visit root_path
+    click_on 'Login'
+    fill_in 'Email', with: user.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Log in'
     click_on 'Minhas Propostas'
     within("tr#proposal-#{proposal.id}") do
       click_on 'Detalhes'

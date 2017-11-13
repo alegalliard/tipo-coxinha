@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-13T19:01:11-02:00">2017-11-13T19:01:11-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-13T19:28:33-02:00">2017-11-13T19:28:33-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>49</b> files in total.
-    <b>583</b> relevant lines. 
-    <span class="green"><b>583</b> lines covered</span> and
+    <b>595</b> relevant lines. 
+    <span class="green"><b>595</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>3.7</td>
       </tr>
       
       <tr>
@@ -437,7 +437,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>3.2</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -463,9 +463,9 @@
       <tr>
         <td class="strong"><a href="#384c52171b95946d03f873b18d19da205c604249" class="src_link" title="spec/features/cook_view_proposals_spec.rb">spec/features/cook_view_proposals_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>77</td>
-        <td>50</td>
-        <td>50</td>
+        <td>93</td>
+        <td>62</td>
+        <td>62</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -618,8 +618,8 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="9">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="17" data-linenumber="9">
+          <span class="hits">17</span>
           
           <code class="ruby">    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name neighborhood</code>
         </li>
@@ -7388,8 +7388,8 @@
           <code class="ruby">    name &#39;Tia Cleuza&#39;</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="4">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="21" data-linenumber="4">
+          <span class="hits">21</span>
           
           <code class="ruby">    sequence(:email) { |n| &quot;tia#{n}@cleuza.com&quot; }</code>
         </li>
@@ -8054,8 +8054,8 @@
     <h3>spec/features/cook_view_proposals_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>50</b> relevant lines. 
-      <span class="green"><b>50</b> lines covered</span> and
+      <b>62</b> relevant lines. 
+      <span class="green"><b>62</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8090,13 +8090,13 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;)</code>
+          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;, email: &#39;cook@tipocoxinha.com&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">    login_as(cook, scope: :user)</code>
+          
+          <code class="ruby">                  password: &#39;12345678&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -8156,370 +8156,466 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
+          <code class="ruby">    click_on &#39;Login&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    fill_in &#39;Email&#39;, with: cook.email</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(current_path).to match proposals_path</code>
+          <code class="ruby">    fill_in &#39;Senha&#39;, with: &#39;12345678&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    within(&quot;tr#proposal-#{proposal.id}&quot;) do</code>
+          <code class="ruby">    click_on &#39;Log in&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_content &#39;16/11/2017 09:00&#39;</code>
+          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="21">
           
-          <code class="ruby">      expect(page).to have_content proposal.user.name</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_content &#39;R$ 50,00&#39;</code>
+          <code class="ruby">    expect(current_path).to match proposals_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    within(&quot;tr#proposal-#{proposal.id}&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).not_to have_content &#39;16/11/2017 10:00&#39;</code>
+          <code class="ruby">      expect(page).to have_content &#39;16/11/2017 09:00&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).not_to have_content other_proposal.user.name</code>
+          <code class="ruby">      expect(page).to have_content proposal.user.name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &#39;and has no proposals&#39; do</code>
+          <code class="ruby">      expect(page).to have_content &#39;R$ 50,00&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;)</code>
+          <code class="ruby">    expect(page).not_to have_content &#39;16/11/2017 10:00&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    login_as(cook, scope: :user)</code>
+          <code class="ruby">    expect(page).not_to have_content other_proposal.user.name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit root_path</code>
+          <code class="ruby">  scenario &#39;and has no proposals&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
+          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;, email: &#39;cook@tipocoxinha.com&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
+          <code class="ruby">                  password: &#39;12345678&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content &#39;Você ainda não possui nenhuma proposta&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    visit root_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &#39;and see proposal details&#39; do</code>
+          <code class="ruby">    click_on &#39;Login&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;)</code>
+          <code class="ruby">    fill_in &#39;Email&#39;, with: cook.email</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">    login_as(cook, scope: :user)</code>
+          <code class="ruby">    fill_in &#39;Senha&#39;, with: &#39;12345678&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">    proposal = create(:proposal,</code>
+          <code class="ruby">    click_on &#39;Log in&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                      delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
+          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">                      cooker: cook)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    create(:proposal, delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
+          <code class="ruby">    expect(page).to have_content &#39;Você ainda não possui nenhuma proposta&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">                      cooker: cook)</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  scenario &#39;and see proposal details&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit root_path</code>
+          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;, email: &#39;cook@tipocoxinha.com&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
+          
+          <code class="ruby">                  password: &#39;12345678&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    within(&quot;tr#proposal-#{proposal.id}&quot;) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Detalhes&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content proposal.delivery_date_time</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content proposal.user.name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content &#39;R$ 50,00&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(page).to have_content proposal.observations</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scenario &#39;and view send proposals as user&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    user = create(:user, name: &#39;Luisinho&#39;, account_type: 1)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    login_as(user, scope: :user)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
           <code class="ruby">    proposal = create(:proposal,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">                      delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">                      user: user)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    create(:proposal, delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">                      cooker: cook)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    create(:proposal, delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">                      cooker: cook)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">    visit root_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Login&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;Email&#39;, with: cook.email</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;Senha&#39;, with: &#39;12345678&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Log in&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
           <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">    within(&quot;tr#proposal-#{proposal.id}&quot;) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
           <code class="ruby">      click_on &#39;Detalhes&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content proposal.delivery_date_time</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content proposal.user.name</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content &#39;R$ 50,00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content proposal.observations</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;and view send proposals as user&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    cook = create(:user, name: &#39;Zezinho&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user = create(:user, name: &#39;Zezinho&#39;, email: &#39;cook@tipocoxinha.com&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">                  password: &#39;12345678&#39;, account_type: 1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    proposal = create(:proposal,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">                      delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">                      user: user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    create(:proposal, delivery_date_time: &#39;16/11/2017 09:00&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">                      cooker: cook)</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit root_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Login&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;Email&#39;, with: user.email</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;Senha&#39;, with: &#39;12345678&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Log in&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &#39;Minhas Propostas&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    within(&quot;tr#proposal-#{proposal.id}&quot;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_on &#39;Detalhes&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content proposal.delivery_date_time</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content proposal.user.name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content &#39;R$ 50,00&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content proposal.observations</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">end</code>
