@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :find_proposal, only: %i[show]
+  before_action :find_proposal, only: %i[show accept]
   before_action :authenticate_user!, only: %i[create show index]
 
   def index
@@ -18,6 +18,11 @@ class ProposalsController < ApplicationController
       alert = @proposal.errors.full_messages
       redirect_to profile_path(@proposal.cooker_id), alert: alert
     end
+  end
+
+  def accept
+    @proposal.accepted!
+    redirect_to request.referer
   end
 
   private

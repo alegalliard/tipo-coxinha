@@ -21,12 +21,20 @@
           </button>
         </th>
         <th>
-          <button class="btn btn-success">
-            <i class="fa fa-thumbs-o-up"></i>
-          </button>
-          <button class="btn btn-danger">
-            <i class="fa fa-thumbs-o-down"></i>
-          </button>
+          <% if proposal.pending? %>
+            <%= link_to accept_proposal_path(proposal), class: 'btn btn-success', method: :post do %>
+              Aceitar Proposta
+              <i class="fa fa-thumbs-o-up"></i>
+            <% end %>
+            <button class="btn btn-danger">
+              <i class="fa fa-thumbs-o-down"></i>
+            </button>
+          <% elsif proposal.accepted? %>
+            <button class="btn btn-success" disabled="true">
+              Proposta Aceita
+              <i class="fa fa-check"></i>
+            </button>
+          <% end %>
         </th>
       </tr>
       <tr>
@@ -37,7 +45,6 @@
           </div>
         </div>
       </th>
-
       </tr>
     <% end %>
   </tbody>
