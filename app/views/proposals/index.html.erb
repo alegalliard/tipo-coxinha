@@ -1,0 +1,7 @@
+<div>
+  <% if @proposals.any? %>
+    <%= render partial: 'proposals_list', locals: { proposals: @proposals } %>
+  <% else %>
+    <h4>Você ainda não possui nenhuma proposta</h4>
+  <% end %>
+</div>

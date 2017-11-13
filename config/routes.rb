@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :profiles, only: %i[show create]
   get '/search', to: 'search#index', as: 'search_by_region'
-  resources :proposals, only: %i[create show]
+  resources :proposals, only: %i[create show index]
 end
