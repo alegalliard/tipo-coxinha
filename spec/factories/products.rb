@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :product do
-    name 'MyString'
+    sequence(:name) { |n| "Coxinha#{n}" }
     category
     delivery_type
     unity
-    price '9.99'
+    price '10.00'
+    user
   end
 end

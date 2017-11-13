@@ -32,6 +32,10 @@
                     new_product_path, class: "nav-link" %>
               </li>
               <% end %>
+              <li class="nav-item">
+                <%= link_to t('simple_form.button.view_proposal'),
+                    proposals_path, class: "nav-link" %>
+              </li>
             <% else %>
               <li class="nav-item">
                 <%= link_to t("devise.registrations.new.sign_up"),
