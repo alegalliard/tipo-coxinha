@@ -53,4 +53,25 @@ feature 'View list of proposals' do
     expect(page).to have_content 'R$ 50,00'
     expect(page).to have_content proposal.observations
   end
+  scenario 'and view send proposals as user' do
+    cook = create(:user, name: 'Zezinho')
+    user = create(:user, name: 'Luisinho', account_type: 1)
+    login_as(user, scope: :user)
+    proposal = create(:proposal,
+                      delivery_date_time: '16/11/2017 09:00',
+                      user: user)
+    create(:proposal, delivery_date_time: '16/11/2017 09:00',
+                      cooker: cook)
+
+    visit root_path
+    click_on 'Minhas Propostas'
+    within("tr#proposal-#{proposal.id}") do
+      click_on 'Detalhes'
+    end
+
+    expect(page).to have_content proposal.delivery_date_time
+    expect(page).to have_content proposal.user.name
+    expect(page).to have_content 'R$ 50,00'
+    expect(page).to have_content proposal.observations
+  end
 end

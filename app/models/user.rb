@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def account_type_convertion
     account_type == 'cook' ? 'Cozinheiro(a)' : 'Usuário'
   end
+
+  def cook?
+    account_type == 'cook'
+  end
 end

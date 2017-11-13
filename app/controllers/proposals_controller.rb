@@ -3,7 +3,8 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: %i[create show index]
 
   def index
-    @proposals = Proposal.where(cooker: current_user)
+    user_type = user_cook? ? :cooker : :user
+    @proposals = Proposal.where(Hash[user_type, current_user])
   end
 
   def show; end
@@ -20,6 +21,10 @@ class ProposalsController < ApplicationController
   end
 
   private
+
+  def user_cook?
+    current_user.cook?
+  end
 
   def find_proposal
     @proposal = Proposal.find(params[:id])
