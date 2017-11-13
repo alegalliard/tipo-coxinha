@@ -1,10 +1,42 @@
-<%= simple_form_for @product, html: { class: 'form-horizontal' },
+<%= simple_form_for @product, html: { class: 'form-horizontal md ' },
   wrapper: :horizontal_form do |f| %>
 
-  <%= f.input :name, required: true %>
-  <%= f.input :category_id, collection: @category, required: true %>
-  <%= f.input :delivery_type_id, collection: @delivery_type, required: true %>
-  <%= f.input :unity_id, collection: @unity, required: true %>
-  <%= f.input :price, as: :decimal, required: true %>
-  <%= f.button :submit, t('helpers.submit.register'), class: 'btn btn-primary' %>
+  <legend class="text-danger mb-3">Cadastrar produto</legend>
+  <div class="form-group row">
+    <div class="col-sm-8">
+      <%= f.input :name, required: true,
+                label_html: { class: 'col-sm-12' },
+                input_html: { class: 'form-control form-control-lg col-sm-12'} %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.input :price, as: :decimal, required: true,
+      label_html: { class: 'col-sm-12' },
+      input_html: { class: 'form-control form-control-lg col-sm-12'} %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.input :category_id, collection: @category, required: true,
+                label_html: { class: 'col-sm-12' },
+                input_html: { class: 'form-control form-control-lg col-sm-12'} %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.input :delivery_type_id, collection: @delivery_type,
+                required: true,
+                label_html: { class: 'col-sm-12' },
+                input_html: { class: 'form-control form-control-lg col-sm-12'} %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= f.input :unity_id, collection: @unity, required: true,
+                label_html: { class: 'col-sm-12' },
+                input_html: { class: 'form-control form-control-lg col-sm-12'} %>
+    </div>
+
+    <div class="col-sm-12 mt-3">
+    <%= f.button :submit, t('helpers.submit.register'),
+                { class: 'btn btn-danger float-right'} %>
+    </div>
+</div>
 <% end %>

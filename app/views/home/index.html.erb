@@ -1,5 +1,18 @@
-<%= form_tag(search_by_region_path, method: :get) do %>
-  <%= label_tag :region, 'Busca por região' %>
-  <%= search_field_tag :region %>
-  <%= submit_tag 'Buscar' %>
-<% end %>
+<div class="row-fluid text-center">
+    <div class="col-md-12">
+      <h1 class="lobster ">Tipo Coxinha</h1>
+      <p>Busque salgados e doces para a sua festa na sua região.</p>
+    </div>
+    <div class="col-md-12">
+      <%= image_tag('coxinhas.png') %>
+    </div>
+  </div>
+  <div class="col-md-12 form-group">
+    <%= form_tag(search_by_region_path, method: :get) do %>
+      <%= label_tag :region, t('general.search_by_region'), class: 'text-center sr-only' %>
+      <%= search_field_tag :region, 'Digite seu bairro aqui',
+                            class: 'form-control form-control-lg col-sm-12' %>
+      <%= submit_tag 'Buscar', class: 'btn btn-danger float-right' %>
+    <% end %>
+  </div>
+</div>
