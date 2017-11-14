@@ -1,13 +1,15 @@
-<div class="row">
+<div class="row-fluid bg-light">
   <div class="col-md-6" id="product-<%= product.id %>">
-    <h3><%= product.name %></h3>
-    <p><%= t 'activerecord.attributes.product.category' %>:</p>
-    <p><%= product.category.name %></p>
-    <p><%= t 'activerecord.attributes.product.delivery_type' %>:</p>
-    <p><%= product.delivery_type.name %></p>
-    <p><%= t 'activerecord.attributes.product.unity' %>:</p>
-    <p><%= product.unity.name %></p>
-    <p><%= t 'activerecord.attributes.product.price' %>:</p>
-    <p><%= number_to_currency(product.price) %></p>
+    <h3 class="text-danger mt-2"><%= product.name %></h3>
+    <dl class="row">
+      <dt class="col-md-6"><%= t 'activerecord.attributes.product.category' %>:</dt>
+      <dd class="col-md-6"><%= product.category.name %></dd>
+      <dt class="col-md-6"><%= t 'activerecord.attributes.product.delivery_type' %>:</dt>
+      <dd class="col-md-6"><%= product.delivery_type.name %></dd>
+      <dt class="col-md-6"><%= t 'activerecord.attributes.product.unity' %>:</dt>
+      <dd class="col-md-6"><%= product.unity.name %></dd>
+      <dt class="col-md-6"><%= t 'activerecord.attributes.product.price' %>:</dt>
+      <dd class="col-md-6"><%= number_to_currency(product.price) %></dd>
+    </dl>
   </div>
 </div>

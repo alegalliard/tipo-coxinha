@@ -1,4 +1,4 @@
-@import 'font-awesome';
+//@import 'font-awesome';
 @import 'bootstrap';
 .lobster{
   font-family: 'Lobster Two', cursive;
@@ -15,4 +15,23 @@
     border-color: #ebcccc;
     color: #a94442;
     display: flex;
+}
+
+.search-list{
+  list-style: none;
+  li{
+    padding:1.0rem;
+    display: block;
+    border-bottom: 1px solid #666;
+  }
+  .image-block, .desc-block{
+    display: inline-block;
+  }
+  .image-block{
+    width: 200px;
+    margin-right: 20px;
+  }
+  .desc-block{
+    width: calc(100% - 230px)
+  }
 }
