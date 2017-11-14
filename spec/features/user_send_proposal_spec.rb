@@ -47,7 +47,6 @@ feature 'Visitor send proposal' do
     visit profile_path(cooker.id)
     click_on 'Enviar'
 
-    expect(page).to have_content 'Quantidade é obrigatório(a)'
     expect(page).to have_content 'Data e hora de entrega é obrigatório(a)'
 
     expect(current_path).to match profiles_path(cooker)

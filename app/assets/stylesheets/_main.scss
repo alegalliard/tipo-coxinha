@@ -14,3 +14,19 @@
     color: #a94442;
     display: flex;
 }
+
+.no-point-list{
+  list-style: none;
+}
+
+table{
+  td:nth-child(6n+1){
+    text-align: center;
+  }
+
+  td:nth-child(2n+1){
+    input{
+      width: 80px!important
+    }
+  }
+}
