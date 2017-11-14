@@ -13,3 +13,7 @@
     color: #a94442;
     display: flex;
 }
+
+.btn:disabled {
+  opacity: .9;
+}
