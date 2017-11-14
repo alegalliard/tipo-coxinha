@@ -31,7 +31,6 @@ feature 'Cook signup' do
     expect(page).to have_css('dd', text: 'Os mais maravilhosos'\
                                          ' salgados da tia Cleuza')
     expect(page).to have_css('dd', text: 'Cozinheiro(a)')
-    save_page
     expect(page).to have_xpath("//img[contains(@src,'image.jpg')]")
   end
 

@@ -92,6 +92,10 @@ ActiveRecord::Schema.define(version: 20171113222215) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "description"
+    t.string "address"
+    t.integer "address_number"
+    t.string "address_detail"
+    t.string "postal_code"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -14,6 +14,10 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
+        <%= f.input :address %>
+        <%= f.input :address_number %>
+        <%= f.input :address_detail %>
+        <%= f.input :postal_code %>
         <%= f.input :neighborhood %>
         <%= f.input :city_state %>
         <%= f.input :phone %>

@@ -5,5 +5,6 @@ class ProfilesController < ApplicationController
     @user.products.each do |product|
       @proposal.proposal_items.build(product: product)
     end
+    render 'my_profile' if @user == current_user
   end
 end

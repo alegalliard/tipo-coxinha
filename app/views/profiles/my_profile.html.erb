@@ -1,0 +1,27 @@
+<%= render partial: "public_info" %>
+  <h2>Meus Dados Pessoais</h2>
+  <dl>
+    <dt><%= t('activerecord.attributes.user.account_type') %></dt>
+    <dd><%= t(@user.account_type) %></dd>
+
+    <dt><%= t('activerecord.attributes.user.email') %></dt>
+    <dd><%= @user.email %></dd>
+    <dt><%= t('activerecord.attributes.user.phone') %></dt>
+    <dd><%= @user.phone %></dd>
+    <dt><%= t('activerecord.attributes.user.address') %></dt>
+    <dd><%= @user.address %>, <%= @user.address_number %></dd>
+    <dt><%= t('activerecord.attributes.user.address_detail') %></dt>
+    <dd><%= @user.address_detail %></dd>
+    <dt><%= t('activerecord.attributes.user.postal_code') %></dt>
+    <dd><%= @user.postal_code %></dd>
+  </dl>
+
+<% if @user.cook? %>
+  <% if @user.products.empty? %>
+    <h3>Comece a cadastrar seus produtos ;)</h3>
+  <% else %>
+    <h2>Produtos</h2>
+    <%= render @user.products %>
+  <% end %>
+<% else %>
+<% end %>

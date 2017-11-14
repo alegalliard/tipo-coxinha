@@ -2,14 +2,14 @@ require 'rails_helper'
 
 feature 'User view cook profile' do
   scenario 'successfully' do
-    user = create(:user, name: 'Zezinho')
-    coxinha = create(:product, name: 'Coxinha', user: user, price: 20)
-    empada = create(:product, name: 'Empada', user: user, price: 10)
+    cook = create(:user, name: 'Zezinho')
+    coxinha = create(:product, name: 'Coxinha', user: cook, price: 20)
+    empada = create(:product, name: 'Empada', user: cook, price: 10)
 
-    visit profile_path(user.id)
+    visit profile_path(cook.id)
 
     within('main') do
-      expect(page).to have_css('h1', text: user.name)
+      expect(page).to have_css('h1', text: cook.name)
       expect(page).to have_css('img.avatar')
 
       within("div#product-#{coxinha.id}") do
@@ -25,12 +25,12 @@ feature 'User view cook profile' do
   end
 
   scenario 'and cook has no products' do
-    user = create(:user, name: 'Zezinho')
+    cook = create(:user, name: 'Zezinho')
 
-    visit profile_path(user.id)
+    visit profile_path(cook.id)
 
     within('main') do
-      expect(page).to have_css('h1', text: user.name)
+      expect(page).to have_css('h1', text: cook.name)
       expect(page).to have_css('img.avatar')
       expect(page).to have_css('h3', text: 'Desculpe, este cozinheiro ainda'\
                                            ' não cadastrou seus produtos =(')

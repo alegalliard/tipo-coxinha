@@ -21,6 +21,7 @@ AllCops:
     - 'config/initializers/devise.rb'
     - 'vendor/**/*'
     - 'Gemfile'
+    - 'vendor/**/*.rb'
   UseCache: false
 Documentation:
   Enabled: false

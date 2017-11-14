@@ -3,10 +3,11 @@ require 'rails_helper'
 feature 'Visitor send proposal' do
   scenario 'sucessfully' do
     cooker = create(:user, name: 'Zezinho', email: 'test@test.com')
-    user = create(:user, name: 'Luisinho', email: 'user@test.com')
-    login_as(user, scope: :user)
+    user = create(:user, name: 'Luisinho', email: 'user@test.com',
+                         account_type: 1)
     coxinha = create(:product, name: 'Coxinha', user: cooker, price: 20)
     empada = create(:product, name: 'Empada', user: cooker, price: 10)
+    login_as(user, scope: :user)
 
     visit profile_path(cooker.id)
     fill_in 'Coxinha', with: 10
