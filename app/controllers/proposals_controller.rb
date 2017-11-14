@@ -21,11 +21,11 @@ class ProposalsController < ApplicationController
   end
 
   def accept
-    if @proposal.cook == current_user
+    if @proposal.cooker == current_user
       @proposal.accepted!
       redirect_to request.referer
     else
-      redirect_to root_path, error: 'Ação não autorizada'
+      redirect_to root_path, flash: { error: 'Ação não autorizada' }
     end
   end
 
