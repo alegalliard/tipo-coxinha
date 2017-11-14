@@ -1,8 +1,8 @@
 $(function () {
     $("#proposal_table").on("keyup blur", ".form-control", Calculate);
-    
+
     $('.quantity').keyup(function () {
-        calculateSum();        
+        calculateSum();
     });
 });
 
@@ -11,7 +11,7 @@ function Calculate() {
     $("#proposal_table").find('tr').each(function () {
         var quantity = $(this).find('input.quantity').val();
         var price = $(this).find('.price').text();
-        var unity = $(this).find('.unity').text();        
+        var unity = $(this).find('.unity').text();
         price = moneyToInt(price);
 
         var priceTotal = (quantity * price);
@@ -19,10 +19,11 @@ function Calculate() {
         var quantityTotal = calculateQuantity(unity, quantity)
         var real = numberToReal(priceTotal);
         $(this).find('.total_price').text(real ? real : "");
-        $(this).find('.total_quantity').text(quantityTotal ? quantityTotal : "0");   
+        $(this).find('.total_quantity')
+                    .text(quantityTotal ? quantityTotal : "0");   
     });
     var total_real = numberToReal(total);
-    $("#price_sum").text(total_real);      
+    $("#price_sum").text(total_real);
 }
 
 function moneyToInt ( str )
