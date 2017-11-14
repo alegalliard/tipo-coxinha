@@ -10,38 +10,58 @@
 <%= simple_form_for proposal, html:{class:'form-horizontal'}, wrapper: :horizontal_form do |f| %>
   <%= f.hidden_field :cooker_id, value: params[:id]  %>
   <h3>Produtos</h3>
-  <table id="proposal_table">
-    <tr>
-      <th><%= t('activerecord.models.product') %></th>
-      <th><%= t('activerecord.attributes.proposal_item.quantity') %></th>
-      <th><%= t('activerecord.models.delivery_type') %></th>
-      <th><%= t('activerecord.attributes.product.unity') %></th>
-      <th><%= t('activerecord.attributes.proposal_item.price') %> <%=  %></th>
-      <th><%= t('activerecord.attributes.proposal.total_quantity') %></th>
-      <th><%= t('activerecord.attributes.proposal.total_price') %></th>
-    </tr>
+  <table id="proposal_table" class="table mt-3">
+    <thead>
+      <tr class="bg-light">
+        <th><%= t('activerecord.models.product') %></th>
+        <th><%= t('activerecord.attributes.proposal_item.quantity') %></th>
+        <th><%= t('activerecord.models.delivery_type') %></th>
+        <th><%= t('activerecord.attributes.product.unity') %></th>
+        <th><%= t('activerecord.attributes.proposal_item.price') %> <%=  %></th>
+        <th><%= t('activerecord.attributes.proposal.total_quantity') %></th>
+        <th><%= t('activerecord.attributes.proposal.total_price') %></th>
+      </tr>
+    </thead>
+
     <%= f.fields_for :proposal_items do |proposal_item_form| %>
-      <div class="row">
+      <tbody>
         <tr>
           <%= proposal_item_form.hidden_field :product_id, value: proposal_item_form.object.product.id %>
-          <th><%= proposal_item_form.label :product, proposal_item_form.object.product.name, for: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product" %></th>
-          <th><%= proposal_item_form.number_field :quantity, id: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product", class: 'form-control quantity' %></th>
-          <th><%= proposal_item_form.label :delivery_type_id, proposal_item_form.object.product.delivery_type.name %></th>
-          <th><%= proposal_item_form.label :unity, proposal_item_form.object.product.unity.name, class: 'unity' %></th>
-          <th class="price"><%= number_to_currency proposal_item_form.object.product.price %></th>
-          <th class="total_quantity">0</th>
-          <th class="total_price"><%= number_to_currency 0 %></th>
+          <td><%= proposal_item_form.label :product, proposal_item_form.object.product.name, for: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product" %></td>
+          <td><%= proposal_item_form.number_field :quantity, value: 0, id: "proposal_proposal_items_attributes_#{proposal_item_form.object.product.id}_product", class: 'form-control quantity' %></td>
+          <td><%= proposal_item_form.label :delivery_type_id, proposal_item_form.object.product.delivery_type.name %></td>
+          <td><%= proposal_item_form.label :unity, proposal_item_form.object.product.unity.name, class: 'unity' %></td>
+          <td class="price"><%= number_to_currency proposal_item_form.object.product.price %></td>
+          <td class="total_quantity">0</td>
+          <td class="total_price"><%= number_to_currency 0 %></td>
           <%= proposal_item_form.hidden_field :price, value: proposal_item_form.object.product.price %>
         </tr>
-      </div>
+      </tbody>
     <% end %>
   </table>
-  <h5>Valor Total:</h5>
-  <p id="price_sum"><%= number_to_currency 0 %></p>
-  <%= f.input :delivery_date_time, as: :datetime, html5: true %>
-  <%= f.input :observations %>
-  <%= f.button :submit, t('simple_form.labels.proposal.submit'), class: 'btn btn-primary' %>
-  <%= link_to t('simple_form.back'), root_path, class: 'btn btn-secondary' %>
+  <hr>
+  <div class="row">
+    <h5 class="col-md-2 offset-md-8">Valor Total:</h5>
+    <p id="price_sum" class="col-md-1"><%= number_to_currency 0 %></p>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :observations %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :delivery_date_time, as: :datetime, html5: true %>
+    </div>
+
+    <div class="col-md-6">
+      <%= link_to t('simple_form.back'), root_path, class: 'btn btn-secondary mb-5' %>
+    </div>
+    <div class="col-md-6 text-right">
+      <%= f.button :submit, t('simple_form.labels.proposal.submit'), class: 'btn btn-danger' %>
+    </div>
+  </div>
+
 <% end %>
 
 <%= javascript_include_tag 'profiles.js' %>

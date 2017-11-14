@@ -1,12 +1,14 @@
 <h1>Resultados da busca</h1>
 <% if @users.any? %>
-<ul>
+<ul class="row">
   <% @users.each do |user| %>
-    <li id="cook-<%= user.id %>" >
-      <%= image_tag user.avatar.url(:medium) %>
-      <h2><%= user.name %></h2>
-      <p><%= user.description %></p>
-      <%= link_to 'Ver detalhes', profile_path(user.id) %>
+    <li id="cook-<%= user.id %>" class="col-md-4 mb-5 no-point-list ">
+      <div class="p-3 border border-danger">
+        <%= image_tag user.avatar.url(:medium) %>
+        <h2><%= user.name %></h2>
+        <p><%= user.description %></p>
+      </div>
+      <%= link_to 'Ver detalhes', profile_path(user.id), class:"btn btn-danger" %>
     </li>
   <% end %>
 </ul>

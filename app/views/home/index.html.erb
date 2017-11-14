@@ -10,7 +10,7 @@
   <div class="col-md-12 form-group">
     <%= form_tag(search_by_region_path, method: :get) do %>
       <%= label_tag :region, t('general.search_by_region'), class: 'text-center sr-only' %>
-      <%= search_field_tag :region, 'Digite seu bairro aqui',
+      <%= search_field_tag :region, nil, placeholder: 'Digite seu bairro aqui',
                             class: 'form-control form-control-lg col-sm-12' %>
       <%= submit_tag 'Buscar', class: 'btn btn-danger float-right' %>
     <% end %>
