@@ -8,6 +8,8 @@ class Proposal < ApplicationRecord
   validates :delivery_date_time,
             :proposal_items, presence: true
 
+  enum status: { pending: 0, accepted: 1, rejected: 2 }
+
   def calculate_total_price
     total_price = 0
     if proposal_items.any?

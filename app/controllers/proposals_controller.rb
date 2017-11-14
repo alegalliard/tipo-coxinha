@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
-  before_action :find_proposal, only: %i[show]
-  before_action :authenticate_user!, only: %i[create show index]
+  before_action :find_proposal, only: %i[show accept]
+  before_action :authenticate_user!, only: %i[create show index accept]
 
   def index
     user_type = user_cook? ? :cooker : :user
@@ -17,6 +17,15 @@ class ProposalsController < ApplicationController
     else
       alert = @proposal.errors.full_messages
       redirect_to profile_path(@proposal.cooker_id), alert: alert
+    end
+  end
+
+  def accept
+    if @proposal.cooker == current_user
+      @proposal.accepted!
+      redirect_to request.referer
+    else
+      redirect_to root_path, flash: { error: 'Ação não autorizada' }
     end
   end
 

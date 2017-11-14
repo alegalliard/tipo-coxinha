@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :profiles, only: %i[show create]
   get '/search', to: 'search#index', as: 'search_by_region'
-  resources :proposals, only: %i[create show index]
+  resources :proposals, only: %i[create show index] do
+    post 'accept', on: :member
+  end
 end
