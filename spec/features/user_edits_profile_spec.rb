@@ -21,9 +21,8 @@ feature 'user edits his own profile' do
 
     fill_in 'Nome', with: 'Ana Maria Braga'
     fill_in 'Email', with: 'tia@cleuza.com.br'
-    fill_in 'Senha', with: 'tiaCleuza2018'
+    fill_in 'Senha atual', with: 'tiaCleuza2017'
     fill_in 'Complemento', with: 'Apto 51'
-    fill_in 'Confirme sua senha', with: 'tiaCleuza2018'
 
     click_on 'Atualizar'
 
