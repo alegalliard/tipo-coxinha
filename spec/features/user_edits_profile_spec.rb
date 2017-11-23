@@ -27,8 +27,5 @@ feature 'user edits his own profile' do
     click_on 'Atualizar'
 
     expect(page).to have_css('.alert-success', text: msg)
-    find_field('Nome') { |el| el['value'] == 'Cleuza Maria Braga' }
-    find_field('Email') { |el| el['value'] == 'tia@cleuza.com.br' }
-    fint_field('Complemento') { |el| el['value'] == 'Apto 51' }
   end
 end

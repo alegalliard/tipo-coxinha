@@ -7,8 +7,4 @@ class ProfilesController < ApplicationController
     end
     render 'my_profile' if @user == current_user
   end
-
-  def update
-  end
-
 end
