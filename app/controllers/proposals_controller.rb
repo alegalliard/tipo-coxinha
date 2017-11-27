@@ -4,6 +4,7 @@ class ProposalsController < ApplicationController
 
   def index
     user_type = user_cook? ? :cooker : :user
+    @user = current_user
     @proposals = Proposal.where(Hash[user_type, current_user])
   end
 
@@ -48,6 +49,7 @@ class ProposalsController < ApplicationController
                                      proposal_items_attributes:
                                       %I[id product_id
                                          quantity price
-                                         proposal_id])
+                                         proposal_id
+                                         delivery_main_address])
   end
 end

@@ -54,6 +54,12 @@
       <%= f.input :delivery_date_time, as: :datetime, html5: true %>
     </div>
 
+    <div class="col-md-6 offset-md-3">
+          <%= f.input :delivery_main_address, as: :boolean,
+                                              checked_value: true,
+                                              unchecked_value: false %>
+    </div>
+
     <div class="col-md-6">
       <%= link_to t('simple_form.back'), root_path, class: 'btn btn-secondary mb-5' %>
     </div>

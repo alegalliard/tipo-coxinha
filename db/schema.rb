@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113222215) do
+ActiveRecord::Schema.define(version: 20171127003354) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20171113222215) do
     t.integer "cooker_id"
     t.decimal "total_price"
     t.integer "status", default: 0
+    t.boolean "delivery_main_address"
     t.index ["cooker_id"], name: "index_proposals_on_cooker_id"
     t.index ["user_id"], name: "index_proposals_on_user_id"
   end

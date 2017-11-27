@@ -10,14 +10,15 @@ pt-BR:
       default_message: "Por favor verifique os problemas:"
     button:
       register_product: 'Cadastrar Produto'
-      view_proposal: 'Minhas Propostas'      
+      view_proposal: 'Minhas Propostas'
     labels:
       product:
-        name: "Nome"
-        category_id: "Categoria"
-        delivery_type_id: 'Forma de Entrega'
-        unity_id: 'Unidade'
-        price: 'Preço em R$'
-        submit: 'Cadastrar'
+        name: Nome
+        category_id: Categoria
+        delivery_type_id: Forma de Entrega
+        unity_id: Unidade
+        price: Preço em R$
+        submit: Cadastrar
       proposal:
+        delivery_main_address: Entregar no meu endereço
         submit: Enviar Pedido
