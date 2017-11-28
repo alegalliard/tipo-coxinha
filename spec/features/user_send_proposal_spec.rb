@@ -51,7 +51,7 @@ feature 'Visitor send proposal' do
 
     expect(current_path).to match profiles_path(cooker)
   end
-  scenario 'set address in proposal' do
+  scenario 'set current address in proposal' do
     cook = create(:user, name: 'Zezinho', email: 'test@test.com')
     user = create(:user, name: 'Luisinho', email: 'user@test.com',
                          account_type: 1, address: 'Rua Monte Azul',
@@ -80,4 +80,35 @@ feature 'Visitor send proposal' do
       expect(page).to have_css('p', text: address_macro)
     end
   end
+  scenario 'add a new address to proposal' do
+      cook = create(:user, name: 'Zezinho', email: 'test@test.com')
+      user = create(:user, name: 'Luisinho', email: 'user@test.com',
+                           account_type: 1, address: 'Rua Monte Azul',
+                           address_number: 222, address_detail: 'apto 65',
+                           postal_code: '03366-000', city_state: 'São Paulo - SP',
+                           neighborhood: 'Mooca')
+      create(:product, name: 'Coxinha', user: cook, price: 20)
+      create(:product, name: 'Empada', user: cook, price: 10)
+      login_as(user, scope: :user)
+
+      visit profile_path(cook.id)
+      uncheck 'Entregar no meu endereço'
+
+      fill_in 'Endereço', with: 'Rua das Maria Conceição'
+      fill_in 'Número', with: '15'
+      fill_in 'Complemento', with: 'Apto 78'
+      fill_in 'CEP', with: '03463-000'
+      fill_in 'Bairro', with: 'Perus'
+      fill_in 'Cidade - Estado', with: 'São Paulo - SP'
+
+      fill_in 'proposal_delivery_date_time', with: '20/12/2017 19:00'
+      click_on 'Enviar'
+
+      within('main') do
+        expect(page).to have_content 'Entregar no endereço:'
+        expect(page).to have_css('p', text: 'Rua das Maria Conceição, 15')
+        expect(page).to have_css('p', text: 'Apto 78 - Perus')
+        expect(page).to have_css('p', text: 'CEP: 03463-000 - São Paulo - SP')
+      end
+    end
 end

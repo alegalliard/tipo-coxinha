@@ -7,6 +7,12 @@ pt-BR:
       proposal:
         delivery_date_time: Data e hora de entrega
         observations: Observações
+        address: Endereço
+        address_number: Número
+        address_detail: Complemento
+        neighborhood: Bairro
+        city_state: Cidade - Estado
+        postal_code: CEP
         proposal_user: Nome do Comprador
         user:
           phone: Telefone

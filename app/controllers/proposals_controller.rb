@@ -37,6 +37,7 @@ class ProposalsController < ApplicationController
   end
 
   def find_proposal
+    @user = current_user
     @proposal = Proposal.find(params[:id])
   end
 
@@ -46,6 +47,12 @@ class ProposalsController < ApplicationController
                                      :delivery_time,
                                      :observations,
                                      :cooker_id,
+                                     :address,
+                                     :address_number,
+                                     :address_detail,
+                                     :postal_code,
+                                     :city_state,
+                                     :neighborhood,
                                      proposal_items_attributes:
                                       %I[id product_id
                                          quantity price

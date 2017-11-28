@@ -61,6 +61,15 @@
     </div>
 
     <div class="col-md-6">
+      <%= f.input :address, input_html: { value: @user.address} %>
+      <%= f.input :address_number %>
+      <%= f.input :address_detail %>
+      <%= f.input :postal_code %>
+      <%= f.input :neighborhood %>
+      <%= f.input :city_state %>
+    </div>
+
+    <div class="col-md-6">
       <%= link_to t('simple_form.back'), root_path, class: 'btn btn-secondary mb-5' %>
     </div>
     <div class="col-md-6 text-right">
