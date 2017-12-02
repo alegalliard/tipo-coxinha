@@ -61,12 +61,12 @@
     </div>
 
     <div class="col-md-6">
-      <%= f.input :address, input_html: { value: @user.address} %>
-      <%= f.input :address_number %>
-      <%= f.input :address_detail %>
-      <%= f.input :postal_code %>
-      <%= f.input :neighborhood %>
-      <%= f.input :city_state %>
+      <%= f.input :address, input_html: { value: @client.address} %>
+      <%= f.input :address_number, input_html: { value: @client.address_number} %>
+      <%= f.input :address_detail, input_html: { value: @client.address_detail} %>
+      <%= f.input :postal_code, input_html: { value: @client.postal_code} %>
+      <%= f.input :neighborhood, input_html: { value: @client.neighborhood} %>
+      <%= f.input :city_state, input_html: { value: @client.city_state} %>
     </div>
 
     <div class="col-md-6">

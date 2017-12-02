@@ -42,18 +42,11 @@ class ProposalsController < ApplicationController
   end
 
   def portfolio_params
-    params.require(:proposal).permit(:delivery_date_time,
-                                     :delivery_date,
-                                     :delivery_time,
-                                     :observations,
-                                     :cooker_id,
-                                     :address,
-                                     :address_number,
-                                     :address_detail,
-                                     :postal_code,
-                                     :city_state,
-                                     :neighborhood,
-                                     proposal_items_attributes:
+    params.require(:proposal).permit(:delivery_date_time, :delivery_date,
+                                     :delivery_time, :observations, :cooker_id,
+                                     :address, :address_number, :address_detail,
+                                     :postal_code, :city_state,
+                                     :neighborhood, proposal_items_attributes:
                                       %I[id product_id
                                          quantity price
                                          proposal_id
