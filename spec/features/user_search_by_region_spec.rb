@@ -33,4 +33,17 @@ feature 'Visitor searches cook by region' do
 
     expect(current_path).to eq(root_path)
   end
+
+  scenario 'and search shows only cook' do
+    user = create(:user, name: 'Mônica', neighborhood: 'Sacomã',
+                         account_type: 1)
+
+    visit root_path
+
+    fill_in 'Busca por região', with: 'Sacomã'
+    click_on 'Buscar'
+
+    expect(page).to have_no_css('h2', text: user.name)
+    expect(page).to have_no_css('p', text: user.description)
+  end
 end
