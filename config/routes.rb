@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/search', to: 'search#index', as: 'search_by_region'
   resources :proposals, only: %i[create show index] do
     post 'accept', on: :member
+    post 'reject', on: :member
   end
 end

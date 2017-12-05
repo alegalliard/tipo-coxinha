@@ -26,14 +26,21 @@
               Aceitar Proposta
               <i class="fa fa-thumbs-o-up"></i>
             <% end %>
-            <button class="btn btn-danger">
+            <%= link_to reject_proposal_path(proposal), class: 'btn btn-warning', method: :post do %>
               Rejeitar Proposta
               <i class="fa fa-thumbs-o-down"></i>
-            </button>
-          <% elsif proposal.accepted? %>
+            <% end %>
+          <% end %>
+          <% if proposal.accepted? %>
             <button class="btn btn-success" disabled="true">
               Proposta Aceita
               <i class="fa fa-check"></i>
+            </button>
+          <% end %>
+          <% if proposal.rejected? %>
+            <button class="btn btn-light" disabled="true">
+              Proposta Rejeitada
+              <i class="fa fa-thumbs-o-down"></i>
             </button>
           <% end %>
         </th>

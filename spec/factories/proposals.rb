@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :proposal do
     delivery_date_time '16/11/2017 19:00'
-    observations 'MyText'
+    observations 'Entregar em caixinhas'
     status 0
     association :user
     association :cooker, factory: :user
