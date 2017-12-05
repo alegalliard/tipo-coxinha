@@ -13,18 +13,16 @@ RSpec.describe ProposalMailer, type: :mailer do
   end
 
   it 'shows body' do
-    # travel_to(Date.parse('2017/12/30')) do
-      proposal = create(:proposal)
-      mail = ProposalMailer.confirm_accepted_proposal(proposal.id)
+    proposal = create(:proposal)
+    mail = ProposalMailer.confirm_accepted_proposal(proposal.id)
 
-      body_title = "Olá, #{proposal.user.name},"
-      body_detail = "#{proposal.cooker.name} (#{proposal.cooker.email}) aceitou"
-                  + " sua proposta. Confira os detalhes abaixo."
-                  + "Aguarde a entrega ou retire a sua encomenda no dia "
-                  + "#{proposal.delivery_date_time}"
+    body_title = "Olá, #{proposal.user.name},"
+    body_detail = "#{proposal.cooker.name} (#{proposal.cooker.email}) " \
+                  'aceitou sua proposta. Confira os detalhes abaixo.' \
+                  'Aguarde a entrega ou retire a sua encomenda no dia ' \
+                  "#{proposal.delivery_date_time}"
 
-      expect(mail.body.encoded).to include body_title
-      expect(mail.body.encoded).to include body_detail
-    # end
+    expect(mail.body.encoded).to include body_title
+    expect(mail.body.encoded).to include body_detail
   end
 end
