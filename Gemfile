@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rubocop', require: false
   gem 'simplecov', require: false
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 group :development do
