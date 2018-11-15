@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1'
 gem 'simple_form'
 gem 'devise'
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '~> 5.2.0'
 gem 'aws-sdk', '~> 2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "font-awesome-rails"
