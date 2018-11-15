@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bootstrap', '~> 4.0.0.beta2'
+gem 'bootstrap', '~> 4.1'
 gem 'simple_form'
 gem 'devise'
 gem 'paperclip', '~> 5.0.0'
